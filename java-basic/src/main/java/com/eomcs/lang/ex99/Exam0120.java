@@ -39,6 +39,9 @@ public class Exam0120 {
 
     System.out.printf("안녕하세요! %1$s %2$s\n 나이는 %3$d 입니다\n","우형민","입니다.",27);
     System.out.printf("%1$d %2$c %3$d %4$c %5$d", 1 , '+', 2 , '=' , 3 );
+
+    System.out.println();
+    System.out.printf("%1$s %2$s %3$s %4$s","반갑습니다.","우형민","입니다.","잘 부탁드립니다.");
   }
 }
 

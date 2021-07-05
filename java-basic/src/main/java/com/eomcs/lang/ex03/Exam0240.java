@@ -14,6 +14,7 @@ public class Exam0240 {
   public static void main(String[] args) {
     System.out.println(5 - 3);
     System.out.println(5 + (-3));
+    System.out.printf("%2$s %1$s","입니다.","우형민");
   }
 }
 
