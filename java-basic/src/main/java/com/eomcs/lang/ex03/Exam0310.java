@@ -7,10 +7,10 @@ package com.eomcs.lang.ex03;
 //
 public class Exam0310 {
   public static void main(String[] args) {
-    
+
     //## 10진수 표기법
     System.out.println(3.14);
-    
+
     //## Exponential 기호 사용하기
     //- e 기호를 사용하면 소수점의 위치를 조정할 수 있다.
     //- 소수점의 위치를 움직인다고 해서 "부동소수점(floating point)"이라 부른다. 
@@ -20,5 +20,6 @@ public class Exam0310 {
     System.out.println(0.314e1); // 0.314 * 10의1승 = 3.14
     System.out.println(31.4e-1); // 31.4 * 10의-1승 = 3.14
     System.out.println(314e-2); // 314 * 10의-2승 = 3.14
+    System.out.println(3140e-3);
   }
 }

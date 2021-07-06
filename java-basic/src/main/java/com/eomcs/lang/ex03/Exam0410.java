@@ -18,8 +18,8 @@ public class Exam0410 {
     // - 만약 폰트 파일에 해당 코드의 문자가 없으면 출력하지 못한다.
     //
     //작은 따옴표를 사용하여 문자를 표현한다.
-    System.out.println('A');
-    System.out.println('가');
+    System.out.println('A');   //'0x0041'
+    System.out.println('가');  //'0xac00'
 
     // 직접 문자를 적는 대신에 그 문자에 부여된 코드 값을 지정할 수 있다.
     // 문자에 대해 부여된 값을 '문자 코드(character code)'라 부른다.
@@ -30,6 +30,8 @@ public class Exam0410 {
     System.out.println('\u0041');  // A
     System.out.println('\uac00');  // 가
     System.out.println('\uAC00');  // 가 (16진수는 대소문자를 구분하지 않는다)
+    //    System.out.println("\u007b\u007c\u007d");
+    //    System.out.println("\u007b"+"\u007c"+"\u007d");
 
     // \ 바로 뒤에 8진수로 적을 수 있다.
     // 단, 0 ~ 377 범위의 8진수만 가능하다.
@@ -44,6 +46,7 @@ public class Exam0410 {
     System.out.println('\u00a9'); // copyright를 뜻하는 '©' 문자 코드
     System.out.println('\u03c0'); // 수학의 파이 기호 'π'
     System.out.println('\u03a3'); // 수학의 시그마 기호 'Σ'
+
   }
 }
 
@@ -94,7 +97,7 @@ public class Exam0410 {
 //     - 한글은 규칙에 따라 3바이트로 변환한다.
 //
 // 폰트
-// 1) Raster 폰트(bitcamp 폰트)
+// 1) Raster 폰트(bitmap 폰트)
 // - 크기를 늘리면 계단현상 발생
 // - 폰트를 도트(점) 정보로 저장한다.
 // - 출력 속도가 빠르다.
