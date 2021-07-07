@@ -4,7 +4,7 @@ package com.eomcs.lang.ex99;
 //
 public class Exam0240 {
   public static void main(String[] args) { 
-    java.util.Scanner keyboard = new java.util.Scanner(System.in);
+    java.util.Scanner keyboard = new java.util.Scanner(System.in); 
 
     System.out.print("나이? ");
     int age = keyboard.nextInt();

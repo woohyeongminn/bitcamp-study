@@ -9,7 +9,7 @@ public class Exam0430 {
 
     //유니코드를 직접 넘겨주기
     //단, 유니코드임을 알려주기 위해 (char)를 앞에 붙인다.
-    System.out.println((char)123);
+    System.out.println((char)123); 
 
     //작은 따옴표를 사용하여 문자 코드를 넘겨주기
     //(char)붙일 필요가 없다.

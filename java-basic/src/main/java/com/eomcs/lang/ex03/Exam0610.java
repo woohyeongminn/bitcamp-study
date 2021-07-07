@@ -13,7 +13,7 @@ public class Exam0610 {
     System.out.println("ABC가나다");
 
     // 문자열에 유니코드를 포함할 수 있다.
-    System.out.println("\u0041BC\uac00나다");
+    System.out.println("\u0041BC\uac00나다"); 
   }
 }
 

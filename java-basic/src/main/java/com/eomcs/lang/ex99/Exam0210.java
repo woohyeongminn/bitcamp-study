@@ -5,7 +5,7 @@ package com.eomcs.lang.ex99;
 public class Exam0210 {
   public static void main(String[] args) {
     // 1) 키보드로 입력한 데이터를 읽을 때 사용할 도구를 준비한다.
-    java.io.InputStream keyboard = System.in;
+    java.io.InputStream keyboard = System.in;        // 호수 
 
     // 2) InputStream은 바이트 단위로 읽는 기능이 있다.
     //    바이트 단위로 읽어서 int나 문자열로 바꾸려면 또 코딩해야 하는 불편함이 있다.
@@ -13,7 +13,7 @@ public class Exam0210 {
     //    바꿔주는 기능을 제공한다.
     //    그런 기능이 들어 있는 도구가 java.util.Scanner 이다.
     // => 키보드를 스캐너에 연결한다.
-    java.util.Scanner keyScan = new java.util.Scanner(keyboard);
+    java.util.Scanner keyScan = new java.util.Scanner(keyboard);   //잔디 물뿌리는 기계
 
     // print()는 문자열을 출력한 후 줄 바꿈을 하지 않는다.
     System.out.print("팀명? "); 
@@ -28,7 +28,7 @@ public class Exam0210 {
     //   입력값으로 0d0a 2바이트 값이 들어오고,
     //   nextLine()은 그 전까지 들어온 데이터를 문자열로 만들어 리턴한다.
     String str = keyScan.nextLine();
-    
+
     // 사용자가 입력한 문자열을 출력한다.
     System.out.println(str);
 
