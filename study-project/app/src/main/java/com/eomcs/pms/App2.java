@@ -1,49 +1,73 @@
 package com.eomcs.pms;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.Scanner;
 
 public class App2 {
 
   public static void main(String[] args) {
-
-    java.util.Scanner keyboard = new java.util.Scanner(System.in);
-    Date dateNow = new Date(System.currentTimeMillis());
-
     System.out.println("[프로젝트]");
-    System.out.print("번호 :");
-    int no = keyboard.nextInt();
-    keyboard.nextLine();
 
-    System.out.print("프로젝트명 :");
-    String projectName = keyboard.nextLine();
+    Scanner keyboardScan = new Scanner(System.in);
 
-    System.out.print("내용 :");
-    String contents = keyboard.nextLine();
+    final int MAX = 100;
+    int size = 0;
+    int i ;
 
-    //    System.out.print("시작일 :");
-    //
-    //    System.out.print("종료일 :");
-    //    keyboard.nextLine();
-
-    System.out.print("만든이 :");
-    String creator = keyboard.nextLine();
-
-    System.out.print("팀원 :");
-    String member = keyboard.nextLine();
+    int[] no = new int[MAX];
+    String[] title = new String[MAX];
+    String[] content = new String[MAX];
+    Date[] startDate = new Date[MAX];
+    Date[] endDate = new Date[MAX];
+    String[] owner = new String[MAX];
+    String[] members = new String[MAX];
 
 
-    System.out.println("------------------------------------------");
-    System.out.println("[프로젝트]");
-    System.out.printf("번호: %d\n", no);
-    System.out.printf("프로젝트명: %s\n", projectName);
-    System.out.printf("내용: %s\n", contents);
-    System.out.printf("시작일 :");
-    System.out.println(dateNow);
-    System.out.printf("종료일: 2022-01-31\n");
-    System.out.printf("만든이: %s\n", creator);
-    System.out.printf("팀원: %s\n", member);
+
+    for (i=0; i<MAX; i=i+1) {
 
 
+      System.out.print("번호? ");
+      no[i] = Integer.parseInt(keyboardScan.nextLine());
+      System.out.print("프로젝트명? ");
+      title[i] = keyboardScan.nextLine();
+      System.out.print("내용? ");
+      content[i] = keyboardScan.nextLine();
+      System.out.print("시작일? ");
+      startDate[i] = Date.valueOf(keyboardScan.nextLine());
+      keyboardScan.nextLine();
+      System.out.print("종료일? ");
+      endDate[i] = Date.valueOf(keyboardScan.nextLine());
+      keyboardScan.nextLine();
+      System.out.print("만든이? ");
+      owner[i] = keyboardScan.nextLine();
+      System.out.print("팀원? ");
+      members[i] = keyboardScan.nextLine();
+
+      size = size + 1;
+
+      System.out.println("계속 입력하시겠습니까?(y/N)");
+      String inp = keyboardScan.nextLine();
+
+      if (inp.equalsIgnoreCase("N")||inp.equalsIgnoreCase("")) {
+        break;
+      }
+
+    }
+
+    keyboardScan.close();
+
+    System.out.println("--------------------------------");
+
+    for (i=0; i<size; i=i+1) {
+
+      System.out.printf("번호: %d %s %s %s %s\n",
+          no[i],
+          title[i],
+          startDate[i],
+          endDate[i],
+          owner[i]);
+
+    }
   }
-
 }
