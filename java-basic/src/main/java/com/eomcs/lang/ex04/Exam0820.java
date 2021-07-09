@@ -4,7 +4,7 @@ package com.eomcs.lang.ex04;
 //
 public class Exam0820 {
   public static void main(String[] args) {
-    
+
     int a = 100;
 
     {
@@ -24,7 +24,7 @@ public class Exam0820 {
     // 왜?
     // 안쪽 블록의 실행이 끝나면, 안쪽 블록에서 선언된 모든 변수들이
     // 자동으로 제거된다.
-    //System.out.println(b); // 컴파일 오류!
+    //    System.out.println(b); // 컴파일 오류!
 
     {
       // 이전 블록에서 선언된 변수는 그 블록이 종료되는 순간 

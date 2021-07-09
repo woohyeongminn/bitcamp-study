@@ -23,16 +23,16 @@ public class Exam0510 {
 
     // 배열 선언
     int[] arr1 = new int[5]; // OK!
-    int arr2[] = new int[5]; // OK! C-style. 
+    int arr2[] = new int[5]; // OK! c언어 -style. 
 
     // 배열의 크기는 int 타입의 최대 값에서 2를 뺀 값이다.
     // 배열의 최대 크기 = Integer.MAX_VALUE - 2
 
-    //int[] arr3 = new int[2147483647]; // 실행 오류 => VM의 배열 크기 제한을 초과
+    // int[] arr3 = new int[2147483647]; // 실행 오류 => VM의 배열 크기 제한을 초과
     // Exception in thread "main" java.lang.OutOfMemoryError: Requested array size exceeds VM limit
 
-    int[] arr3 = new int[2147483645]; // OK!
-    //int[] arr3 = new int[Integer.MAX_VALUE - 2]; // OK!
+    //int[] arr3 = new int[2147483645]; // OK!
+    int[] arr3 = new int[Integer.MAX_VALUE - 2]; // OK!
 
     // 실행 오류 발생!
     // => Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
@@ -42,7 +42,8 @@ public class Exam0510 {
     // => JVM을 실행할 때 최대 힙(heap) 메모리의 크기를 늘리면 된다.
     // => JVM 실행 옵션에 다음을 추가하라!
     //        -Xmx메모리크기
-    //    예) $ java -Xmx20000m ...
+    //    예) $ java -Xmx20000m ... // 운영체제한테 20GB 필요해!! // 하드디스크에서 확보 해줄게!!
+    System.out.println("종료!");
   }
 }
 
