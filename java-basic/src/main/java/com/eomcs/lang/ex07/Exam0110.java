@@ -2,29 +2,24 @@ package com.eomcs.lang.ex07;
 
 import java.util.Scanner;
 
-//# 메서드 : 사용 전
-//
 public class Exam0110 {
 
-  static void printSpace(int len) {
 
-    for (int spaceCnt = 1; spaceCnt <= len; spaceCnt++) {
+  static void printSpace(int a) {
+    for (int spaceCnt = 1; spaceCnt <= a; spaceCnt++) {
       System.out.print(" ");
     }
   }
-  static void printStar(int len) {
 
-    for (int starCnt = 1; starCnt <= len; starCnt++) {
+  static void printStar(int b) {
+    for (int starCnt = 1; starCnt <= b; starCnt++) {
       System.out.print("*");
     }
   }
 
-  static int getSpaceLength(int ts, int ds) {
-    return  (ts - ds) / 2;
+  static int plus(int c, int d) {
+    return (c-d)/2 ;
   }
-
-
-
 
   public static void main(String[] args) {
     Scanner keyScan = new Scanner(System.in);
@@ -33,10 +28,9 @@ public class Exam0110 {
     keyScan.close();
 
     for (int starLen = 1; starLen <= len; starLen += 2) {
-      printSpace((len - starLen) / 2);
+      printSpace(plus(len, starLen));
       printStar(starLen);
       System.out.println();
-
     }
   }
 }
