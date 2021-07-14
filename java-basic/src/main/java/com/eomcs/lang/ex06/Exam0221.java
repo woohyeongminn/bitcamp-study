@@ -18,16 +18,18 @@ public class Exam0221 {
     switch (no) {
       case 1:
         System.out.println("정보처리자격증");
-        System.out.println("졸업증명서");
-        System.out.println("이력서");
-        break; // 여기까지만 실행한다.
+        //System.out.println("졸업증명서");
+        // System.out.println("이력서");
+        // break; // 여기까지만 실행한다.
       case 2:
         System.out.println("졸업증명서");
-        System.out.println("이력서");
-        break; // 여기까지만 실행한다.
+        //        System.out.println("이력서");
+        //        break; // 여기까지만 실행한다.
       case 3:
         System.out.println("이력서");
         break; // 여기까지만 실행한다.
+      case 4:
+        System.out.println("4는 해당사항이 없습니다.");
       default:
         System.out.println("올바른 번호를 입력하세요!");
     }

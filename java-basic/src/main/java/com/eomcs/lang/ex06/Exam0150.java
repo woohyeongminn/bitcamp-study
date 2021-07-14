@@ -4,7 +4,7 @@ package com.eomcs.lang.ex06;
 //
 public class Exam0150 {
   public static void main(String[] args) {
-    int age = 15;
+    int age = 11;
 
 
     // else는 가장 가까운 if에 소속된다.
@@ -12,11 +12,11 @@ public class Exam0150 {
     if (age >= 19)
       if (age >= 70) 
         System.out.println("지하철 무임승차 가능합니다.");
-    else 
-      System.out.println("미성년입니다.");
+      else 
+        System.out.println("미성년입니다.");
 
     System.out.println("------------------------------");
-    
+
     // 어? 강사님, if 문에 블록을 사용하지 않으면
     // 오직 한 개의 문장만 온다고 했는데,
     // 위의 코드를 보면 if (age > 19) 안에 
@@ -36,7 +36,7 @@ public class Exam0150 {
     }
 
     System.out.println("------------------------------");
-    
+
     // 만약 else 문을 첫 번째 if 문에 소속되게 하고 싶다면
     // 다음과 같이 두 번재 if 문을 블록으로 묶어라!
     if (age >= 19) {

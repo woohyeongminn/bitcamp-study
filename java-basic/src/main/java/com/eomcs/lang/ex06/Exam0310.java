@@ -24,6 +24,7 @@ public class Exam0310 {
     while (count < 5)
       System.out.println(count++);
 
+
     System.out.println("---------------------------");
 
     // 문법3:
