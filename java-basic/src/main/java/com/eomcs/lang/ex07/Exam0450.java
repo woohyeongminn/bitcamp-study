@@ -5,7 +5,7 @@ package com.eomcs.lang.ex07;
 public class Exam0450 {
 
   static int sum(int value) {
-    if (value == 1)
+    if (value == 1) 
       return 1;
 
     return value + sum(value - 1);

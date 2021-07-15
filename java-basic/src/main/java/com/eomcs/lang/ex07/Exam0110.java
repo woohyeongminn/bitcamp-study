@@ -17,7 +17,7 @@ public class Exam0110 {
     }
   }
 
-  static int plus(int c, int d) {
+  static int plusValue(int c, int d) {
     return (c-d)/2 ;
   }
 
@@ -28,7 +28,7 @@ public class Exam0110 {
     keyScan.close();
 
     for (int starLen = 1; starLen <= len; starLen += 2) {
-      printSpace(plus(len, starLen));
+      printSpace(plusValue(len,starLen));
       printStar(starLen);
       System.out.println();
     }
