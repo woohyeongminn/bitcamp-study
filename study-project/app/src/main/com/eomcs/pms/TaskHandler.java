@@ -44,8 +44,10 @@ public class TaskHandler {
         default:
           stateLabel = "신규";
       }
+
       System.out.printf("%d, %s, %s, %s, %s\n",
           tNo[i], tContent[i], tDeadline[i], stateLabel, tOwner[i]);
     }
   }
+
 }

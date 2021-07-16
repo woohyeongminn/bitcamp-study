@@ -21,20 +21,21 @@ public class Test003 {
   //  }
 
   public static void main(String[] args) {
-    int[] values = {1,2,3,4,5,6,7,8,9,10};
+    int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     //changeValuePosition(values);
-    int[] a = values;
-    int tmp;
-    for (int i = 0; i < a.length / 2; i++) {
-      tmp = a[i];
-      a[i] = a[i + a.length / 2];
-      a[i + a.length / 2] = tmp;
-      System.out.println(a[i]);
-    }
-
-    for (int v : a) {
-      System.out.print(v + ",");
-    }
+    int half = values.length /2 ;
+    System.out.println(half);
+    //    int tmp;
+    //    for (int i = 0; i < half; i++) {
+    //      tmp = values[i];
+    //      values[i] = values[i + half];
+    //      values[i + half] = tmp;
+    //      System.out.println(values[i]);
+    //    }
+    //
+    //    for (int result : values) {
+    //      System.out.print(result + ",");
+    //    }
   }
 
 }

@@ -7,14 +7,16 @@ public class Test {
     int half = arr.length /2 ;
 
     for (int i = 0; i < half; i++) {
-      for (int j = 0; j < half+1; j++) {
-        //                int temp = arr[i];
-        //                arr[i] = arr[half+j];
-        //                arr[half+j] = arr[i];
-        System.out.printf("%d <--> %d\n",arr[i],arr[j]);
+      for (int j = 1; j < half+1; j++) {
+        int temp = arr[i];
+        arr[i] = arr[i + half];
+        arr[i + half] = temp ;
       }
+      //System.out.printf("%d <--> %d\n",arr[i],arr[i + half]);
     }
-
+    for (int a : arr) {
+      System.out.print("{" + a +"," );
+    }
   }
 }
 
