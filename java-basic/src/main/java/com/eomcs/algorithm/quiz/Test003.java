@@ -10,21 +10,29 @@ package com.eomcs.algorithm.quiz;
 // 한 줄에 버그가 있다. 고쳐라!
 public class Test003 {
 
-  static void changeValuePosition(int[] values) {
-    int tmp;
-    int[] v = values;
-    for (int i = 0; i < v.length / 2; i++) {
-      tmp = v[i];
-      v[i] = v[i + v.length / 2];
-      v[i + v.length / 2] = tmp;
-    }
-  }
+  //  static void changeValuePosition(int[] values) {
+  //    int tmp;
+  //    for (int i = 0; i < values.length / 2; i++) {
+  //      tmp = values[i];
+  //      values[i] = values[i + values.length / 2];
+  //      values[i + values.length / 2] = tmp;
+  //      System.out.println(values[i]);
+  //    }
+  //  }
 
   public static void main(String[] args) {
-    int[] values = {2, 4, 5, 6, 4, 3, 7, 8};
-    changeValuePosition(values);
+    int[] values = {1,2,3,4,5,6,7,8,9,10};
+    //changeValuePosition(values);
+    int[] a = values;
+    int tmp;
+    for (int i = 0; i < a.length / 2; i++) {
+      tmp = a[i];
+      a[i] = a[i + a.length / 2];
+      a[i + a.length / 2] = tmp;
+      System.out.println(a[i]);
+    }
 
-    for (int v : values) {
+    for (int v : a) {
       System.out.print(v + ",");
     }
   }
