@@ -10,6 +10,9 @@ public class ProjectHandler {
 
   Project[] projects = new Project[MAX_LENGTH];
   int size = 0;
+
+  // ProjectHandler가 지속적으로 사용할 의존 객체는 다음과 같이 인스턴스 필드로 받는다.
+  // 이 인스턴스 변수에 의존 객체의 주소를 넣을 수 있도록 접근모드를 공개로 설정한다.
   public MemberHandler memberHandler;
 
   public void add() {
@@ -155,6 +158,9 @@ public class ProjectHandler {
   private String promptOwner(String label) {
     while (true) {
       String owner = Prompt.inputString(label);
+      // 회원 이름이 등록된 회원의 이름인지 검사할 때 사용할 MemberHandler 인스턴스는
+      // 인스턴스 변수에 미리 주입되어 있기 때문에 파라미터로 받을 필요가 없다.
+      // 다음과 같이 인스턴스 변수를 직접 사용하면 된다.
       if (this.memberHandler.exist(owner)) {
         return owner;
       } else if (owner.length() == 0) {
