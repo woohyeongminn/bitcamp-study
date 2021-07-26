@@ -10,7 +10,17 @@ public class ProjectHandler {
 
   Project[] projects = new Project[MAX_LENGTH];
   int size = 0;
+
+  //ProjectHandler가 지속적으로 사용할 의존 객체는 다음과 같이 인스턴스 필드로 받는다.
+  // 이 인스턴스 변수에 의존 객체의 주소를 넣을 수 있도록 접근모드를 공개로 설정한다.
   public MemberHandler memberHandler;
+
+  // 생성자 선언
+  //  - 인스턴스를 생성할 때 반드시 호출되는 메서드이다..
+  //  - 생성자는 리턴 타입이 없다.
+  //  - 메서드 이름이 클래스 이름과 같아야 한다.
+  //  - 인스턴스 변수를 유효환 값으로 초기화시킨다.
+  //  - 필요하다면 인스턴스 변수를 초기화시킬 때 사용할 값을 파라미터로 받을 수 있다.
 
   public void add() {
     System.out.println("[프로젝트 등록]");
