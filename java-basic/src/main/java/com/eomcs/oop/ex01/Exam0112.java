@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex01;
 
-// # 클래스 사용 : 3) 클래스 사용
+// # 클래스 사용 : 3) 클래스 사용/ 사용자 정의 데이터 타입
 //
 public class Exam0112 {
   public static void main(String[] args) {
