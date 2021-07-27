@@ -1,7 +1,7 @@
 // 스태틱 초기화 블록(static initializer) - 레퍼런스 선언
 package com.eomcs.oop.ex03;
 
-public class Exam0610 {
+public class Exam0610 {           
 
   public static class A {
     static int a;
@@ -28,7 +28,7 @@ public class Exam0610 {
     // - 그래서 스태틱 초기화 블록이 실행되지 않는다.
     A obj1;
     A obj2;
-
+    //    A.m();
     System.out.println("종료!");
   }
 }

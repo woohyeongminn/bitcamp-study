@@ -83,17 +83,10 @@ public class TaskHandler {
     Date deadline = Prompt.inputDate(String.format("마감일(%s)? ", task.deadline));
     int status = promptStatus();
 
-    String owner = null;
-    while (true) {
-      owner = Prompt.inputString(String.format(
-          "담당자(%s)?(취소: 빈 문자열) ", task.owner));
-      if (memberHandler.exist(owner)) {
-        break;
-      } else if (owner.length() == 0) {
-        System.out.println("작업 변경을 취소합니다.");
-        return; // 메서드 실행을 즉시 종료!
-      }
-      System.out.println("등록된 회원이 아닙니다.");
+    String owner = PromptOwner(task.owner);
+    if (owner == null) {
+      System.out.println("작업 변경을 취소합니다.");
+      return;
     }
 
     String input = Prompt.inputString("정말 변경하시겠습니까?(y/N) ");
