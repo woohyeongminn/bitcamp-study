@@ -31,11 +31,14 @@ public class Exam0110 {
 
     // 인스턴스 변수는 레퍼런스를 통해 사용할 수 있다.
     obj1.v1 = 100;
+    obj1.v2 = false;
     obj2.v1 = 200;
+    obj2.v2 = true;
     obj3.v1 = 300;
     obj3.v2 = true;
 
-    System.out.printf("%d, %d, %d, %s\n", obj1.v1, obj2.v1, obj3.v1, obj3.v2);
+    System.out.printf("%d, %s, %d, %s, %d, %s\n",
+        obj1.v1, obj1.v2, obj2.v1, obj2.v2, obj3.v1, obj3.v2);
   }
 }
 

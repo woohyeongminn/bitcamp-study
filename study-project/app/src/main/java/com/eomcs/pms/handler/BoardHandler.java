@@ -33,13 +33,14 @@ public class BoardHandler {
   public void list() {
     System.out.println("[게시글 목록]");
     for (int i = 0; i < this.size; i++) {
-      System.out.printf("%d, %s, %s, %s, %d, %d\n", 
-          this.boards[i].no, 
-          this.boards[i].title, 
-          this.boards[i].writer,
-          this.boards[i].registeredDate,
-          this.boards[i].viewCount, 
-          this.boards[i].like);
+      //      System.out.printf("%d, %s, %s, %s, %d, %d\n", 
+      //          this.boards[i].no, 
+      //          this.boards[i].title, 
+      //          this.boards[i].writer,
+      //          this.boards[i].registeredDate,
+      //          this.boards[i].viewCount, 
+      //          this.boards[i].like);
+      System.out.println(this.boards[i]);
     }
   }
 
