@@ -9,6 +9,6 @@ public class Calculator {
   }
 
   public void minus(int value) {
-    this.result -= value;
+    this.result -= value; 
   }
 }

@@ -18,6 +18,11 @@ public class B extends A {
   static {
     System.out.println("B클래스의 static{} 실행!");
   }
+
+  public B() {
+    super();
+  }
+
 }
 
 

@@ -54,7 +54,7 @@ public class Exam0660 {
     // - 즉 static 블록을 다시 실행하지 않는다!
     new A(); 
 
-  }
+  } 
 }
 
 

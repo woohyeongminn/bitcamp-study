@@ -13,7 +13,7 @@ public class Exam0520 {
     float f2;
     double d2;
     boolean bool2;
-    String str2;
+    String str2; 
     Date date2;
   }
 

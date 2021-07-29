@@ -3,7 +3,7 @@ package com.eomcs.oop.ex05.c;
 
 public class Car2 {
   public String model;
-  String maker;
+  public String maker;
   public int capacity;
   public boolean sunroof;
   public boolean auto;

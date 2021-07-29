@@ -29,6 +29,10 @@ public class Exam0410 {
       System.out.println("Score()");
     }
 
+    Score(int a) {
+      System.out.println(a);
+    }
+
 
     public void compute() {
       this.sum = this.kor + this.eng + this.math;
@@ -40,13 +44,14 @@ public class Exam0410 {
     // 생성자를 호출하는 방법
     // => 인스턴스를 생성하는 new 명령에서 호출할 생성자의 파라미터 값을 지정하면 된다.
     // => 다음과 같이 파라미터 값을 주지 않으면 기본 생성자를 호출하라는 뜻이 된다.
-    Score s1 = new Score(); // 드디어 클래스 명 다음에 오는 괄호()의 의미를 알게 되었다.
+    Score s1 = new Score(3); // 드디어 클래스 명 다음에 오는 괄호()의 의미를 알게 되었다.
 
     // 생성자를 호출하지 않을 수 있는가?
     // => 컴파일 오류!
     //        Score s2 = new Score;
 
     Score s3 = new Score();
+
   }
 }
 

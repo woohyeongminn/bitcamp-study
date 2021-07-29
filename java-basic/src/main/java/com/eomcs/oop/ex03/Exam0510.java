@@ -8,7 +8,7 @@ public class Exam0510 {
   static class A {
     static byte b;
     static short s;
-    static int i;
+    static int i; 
     static long l;
     static char c;
     static float f;

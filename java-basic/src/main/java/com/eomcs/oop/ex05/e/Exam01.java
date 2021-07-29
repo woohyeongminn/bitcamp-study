@@ -1,7 +1,7 @@
 // 상속의 실제적인 의미
 package com.eomcs.oop.ex05.e;
 
-public class Exam01 {
+public class Exam01 { 
 
   public static void main(String[] args) {
     B obj = new B();

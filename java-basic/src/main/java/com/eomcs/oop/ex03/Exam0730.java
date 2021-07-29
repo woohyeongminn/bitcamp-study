@@ -21,8 +21,8 @@ public class Exam0730 {
       //  to share a block of code 
       //  between multiple constructors.'
       // 
-      // a = 100;
-      // System.out.println("Hello!");
+      //      a = 100;
+      //      System.out.println("Hello!");
 
       System.out.println("A()");
       b = 200;
@@ -54,7 +54,7 @@ public class Exam0730 {
       System.out.println("Hello!");
     }
     // 여러 개의 생성자가 있으면,
-    // - 인스턴스 초기화 블록 크드는 존재하는 모든 생성자의 앞 부분에 삽입된다.
+    // - 인스턴스 초기화 블록 코드는 존재하는 모든 생성자의 앞 부분에 삽입된다.
     // - 바이트코드(Exam0730$A.class)를 확인해 보라!
   }
   public static void main(String[] args) {

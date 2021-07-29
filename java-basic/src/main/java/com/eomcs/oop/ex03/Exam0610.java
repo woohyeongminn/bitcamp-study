@@ -19,7 +19,7 @@ public class Exam0610 {
     static {
       System.out.println("Static{} 22222");
     }
-  }
+  } 
 
   public static void main(String[] args) throws Exception {
 

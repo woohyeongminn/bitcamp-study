@@ -29,7 +29,7 @@ public class Exam0850 {
     }
 
     // 필드 초기화 문장(variable initializer)
-    int a = 100;
+    int a = 80;
   }
 
   public static void main(String[] args) {

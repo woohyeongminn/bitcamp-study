@@ -29,7 +29,7 @@ public class Exam0440 {
     Score(String name, int kor, int eng, int math) {
       System.out.println("Score(String,int,int,int) 호출!");
       this.name = name;
-      this.kor = kor;
+      this.kor = kor; 
       this.eng = eng;
       this.math = math;
       this.compute();
