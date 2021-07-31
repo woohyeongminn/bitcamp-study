@@ -3,7 +3,7 @@ package com.eomcs.oop.ex06.c;
 
 
 
-public class Exam0430 {
+public class Exam0440 {
 
   static class A {
     String name = "A";
@@ -12,9 +12,12 @@ public class Exam0430 {
 
     void print() {
       System.out.println("A.print():");
-      System.out.printf("  => this.name(%s)\n",this.name);
-      System.out.printf("  => this.tel(%s)\n",this.tel);
-      System.out.printf("  => this.working(%s)\n",this.working);
+      System.out.printf("  => this.name(%s)\n",
+          this.name);
+      System.out.printf("  => this.tel(%s)\n",
+          this.tel);
+      System.out.printf("  => this.working(%s)\n",
+          this.working);
     }
   }
 
@@ -25,10 +28,14 @@ public class Exam0430 {
     @Override
     void print() {
       System.out.println("A2.print():");
-      System.out.printf("  => this.name(%s), super.name(%s)\n",this.name, super.name);
-      System.out.printf("  => this.tel(%s), super.tel(%s)\n",this.tel, super.tel);
-      System.out.printf("  => this.working(%s), super.working(%s)\n",this.working, super.working);
-      System.out.printf("  => this.age(%s), super.age(컴파일 오류!) \n",this.age /*, super.age*/);
+      System.out.printf("  => this.name(%s), super.name(%s)\n",
+          this.name, super.name);
+      System.out.printf("  => this.tel(%s), super.tel(%s)\n",
+          this.tel, super.tel);
+      System.out.printf("  => this.working(%s), super.working(%s)\n",
+          this.working, super.working);
+      System.out.printf("  => this.age(%s), super.age(컴파일 오류!) \n",
+          this.age /*, super.age*/);
     }
   }
 

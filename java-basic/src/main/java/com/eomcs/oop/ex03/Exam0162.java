@@ -14,9 +14,9 @@ public class Exam0162 {
     // - 조회 용도로만 사용하기로 했으면 final로 값을 변경되는 것을 막아라!
     // - 보통 조회용으로 사용하는 변수는 공개해도 되기 때문에 public으로 선언한다!
     //
-    public static final int GUEST = 0;
-    public static final int MEMBER = 1;
-    public static final int MANAGER = 2;
+    static final int GUEST = 0;
+    static final int MEMBER = 1;
+    static final int MANAGER = 2;
 
     String id;
     String password;

@@ -5,6 +5,12 @@ public class Exam02 {
 
   public static void main(String[] args) {
     D obj = new D();
+    C c1 = new C();
+    C c2 = new D();
+    c1.m1();
+    c1.m2();
+    c1.m3();
+    c2 = obj;
 
     obj.m4(); // obj 레퍼런스의 클래스에서 m4()를 찾아 호출한다.
     obj.m3(); // obj 레퍼런스의 클래스(D)에서 m3()를 찾아보고 없다면 수퍼 클래스에서 찾는다.

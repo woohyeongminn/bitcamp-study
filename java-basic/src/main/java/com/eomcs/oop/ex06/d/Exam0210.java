@@ -3,7 +3,7 @@ package com.eomcs.oop.ex06.d;
 
 
 abstract class Car {
-  public abstract void run();
+  public abstract void run();   // 추상메서드
   public void m() {}
 }
 

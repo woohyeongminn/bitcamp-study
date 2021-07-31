@@ -8,6 +8,11 @@ class F {
   //
   public static final int v1 = 100;
 
+  // public static final int v1;
+  // static {
+  // v1 = 100 ;
+  //}
+
   // 스태틱 상수 필드는 스태틱 블록에서 초기화시킬 수 있다.
   public static final int v2;
   static {

@@ -16,11 +16,13 @@ public class B extends A {
   int v2;
 
   static {
+
     System.out.println("B클래스의 static{} 실행!");
   }
 
   public B() {
     super();
+    System.out.println("우형민2");
   }
 
 }
