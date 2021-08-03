@@ -29,7 +29,8 @@ public class Exam0521 {
         Sedan s = (Sedan) v;
         System.out.printf("썬루프: %b\n", s.sunroof);
         System.out.printf("오토: %b\n", s.auto);
-      } else if (v instanceof Truck) {
+      }
+      else if (v instanceof Truck) {
         Truck t = (Truck) v;
         System.out.printf("톤: %f\n", t.ton);
         System.out.printf("덤프여부: %b\n", t.dump);
