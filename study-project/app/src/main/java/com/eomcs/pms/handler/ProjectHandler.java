@@ -6,7 +6,7 @@ import com.eomcs.util.Prompt;
 
 public class ProjectHandler {
 
-  ProjectList projectList = new ProjectList();
+  ProjectList2 projectList = new ProjectList2();
   MemberList memberList;
 
   public ProjectHandler(MemberList memberList) {

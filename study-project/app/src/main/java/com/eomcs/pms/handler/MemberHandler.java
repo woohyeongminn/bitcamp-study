@@ -6,11 +6,12 @@ import com.eomcs.util.Prompt;
 
 public class MemberHandler {
 
-  MemberList memberList = new MemberList();
+  MemberList2 memberList = new MemberList2();
 
-  public MemberList getMemberList() {
+  public MemberList2 getMemberList() {
     return memberList;
   }
+
 
   public void add() {
     System.out.println("[회원 등록]");

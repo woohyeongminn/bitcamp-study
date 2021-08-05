@@ -9,6 +9,8 @@ public class BoardList {
   int size = 0;
 
   public void add(Board board) {
+
+
     if (size == boards.length) {
       Board[] arr = new Board[boards.length + (boards.length >> 1)];
       for (int i = 0; i < size; i++) {
