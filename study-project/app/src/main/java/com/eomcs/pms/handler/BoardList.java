@@ -9,15 +9,23 @@ public class BoardList {
   int size = 0;
 
   public void add(Board board) {
+    if (size == boards.length) {
+      Board[] arr = new Board[boards.length + (boards.length >> 1)];
+      for (int i = 0; i < size; i++) {
+        arr[i] = boards[i];
+      }
+      boards = arr;
+    }
     this.boards[this.size++] = board;
+
   }
 
   public Board[] toArray() {
-    Board[] arr = new Board[this.size];  // 배열에 저장된 값을 담을 정도의 크기를 가진 새 배열을 만든다.
+    Board[] arr = new Board[this.size]; // 배열에 저장된 값을 담을 정도의 크기를 가진 새 배열을 만든다.
     for (int i = 0; i < this.size; i++) { // 배열에 저장된 값을 새 배열에 복사한다.
       arr[i] = boards[i];
     }
-    return arr;         // 새 배열을 리턴한다.
+    return arr; // 새 배열을 리턴한다.
   }
 
   public Board findByNo(int no) {
@@ -30,11 +38,11 @@ public class BoardList {
   }
 
   public boolean remove(Board board) {
-
     int index = indexOf(board);
     if (index == -1) {
       return false;
     }
+
     for (int i = index + 1; i < this.size; i++) {
       this.boards[i - 1] = this.boards[i];
     }
@@ -44,7 +52,6 @@ public class BoardList {
   }
 
   private int indexOf(Board board) {
-
     for (int i = 0; i < this.size; i++) {
       if (this.boards[i] == board) {
         return i;
@@ -52,7 +59,12 @@ public class BoardList {
     }
     return -1;
   }
-
-
-
 }
+
+
+
+
+
+
+
+

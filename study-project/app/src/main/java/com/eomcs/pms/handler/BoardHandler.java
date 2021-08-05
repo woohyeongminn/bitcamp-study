@@ -24,6 +24,7 @@ public class BoardHandler {
 
   public void list() {
     System.out.println("[게시글 목록]");
+
     Board[] list = boardList.toArray();
 
     for (Board board : list) {
@@ -95,13 +96,14 @@ public class BoardHandler {
     if (input.equalsIgnoreCase("n") || input.length() == 0) {
       System.out.println("게시글 삭제를 취소하였습니다.");
       return;
-
     }
+
     boardList.remove(board);
+
     System.out.println("게시글을 삭제하였습니다.");
   }
-
 }
+
 
 
 
