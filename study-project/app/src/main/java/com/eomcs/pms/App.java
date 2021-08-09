@@ -12,7 +12,6 @@ import com.eomcs.pms.menu.MenuGroup;
 import com.eomcs.util.Prompt;
 
 public class App {
-
   List boardList = new ArrayList();
   List memberList = new LinkedList();
   List projectList = new ArrayList();

@@ -14,6 +14,7 @@ package com.eomcs.oop.ex07.a;
 //
 abstract class A3 {
   public abstract void m1();
+
 }
 
 class A3Sub extends A3 {
@@ -47,7 +48,7 @@ public class Exam03 {
     //   레퍼런스 타입의 범위를 넘어서 메서드를 호출할 수는 없다.
     //    obj.m2(); // 컴파일 오류!
 
-    // - 물론 실제 인스턴스 타입으로 형벼환 후에는 가능한다.
+    // - 물론 실제 인스턴스 타입으로 형변환 후에는 가능한다.
     ((A3Sub)obj).m2();
   }
 }

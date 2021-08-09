@@ -27,6 +27,11 @@ abstract class Letter {
   public abstract String getSign();
 }
 
+
+
+
+
+
 // 상세한 기능에 대한 구현은 다음과 같이 서브 클래스에게 맡긴다.
 class LoveLetter extends Letter {
 
@@ -46,6 +51,12 @@ class LoveLetter extends Letter {
 
   }
 }
+
+
+
+
+
+
 
 class ReportLetter extends Letter {
   @Override

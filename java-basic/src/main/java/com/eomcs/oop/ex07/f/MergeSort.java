@@ -1,10 +1,10 @@
-package com.eomcs.oop.ex07.e;
+package com.eomcs.oop.ex07.f;
 
 // 기존의 정렬 클래스처럼 동일한 방법으로 사용하려면
 // Sorter를 상속 받아 같은 타입으로 묶여야 한다.
 // 그래서 Sorter 를 상속 받았다.
 //
-public class MergeSort extends Sorter {
+public class MergeSort implements Sorter {
 
   // Sorter에서 상속 받은 메서드가 추상 메서드이기 때문에
   // 이 서브 클래스는 반드시 구현해야 한다.
