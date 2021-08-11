@@ -4,7 +4,7 @@ package com.eomcs.basic.ex02;
 public class Exam0124 {
   public static void main(String[] args) {
 
-    StringBuffer b1 = new StringBuffer("Hello");
+    StringBuffer b1 = new StringBuffer("Hello");   
     StringBuffer b2 = new StringBuffer("Hello");
 
     // b1, b2는 서로 다른 인스턴스이다.
@@ -40,7 +40,7 @@ public class Exam0124 {
     // 왜, String 클래스는 인스턴스가 아닌 문자열 값을 비교하나요?
     // => String 클래스는 상속 받은 equals() 메서드를 재정의하였기 때문이다.
     // => 이렇게 상속 받은 기능을 자신의 역할에 맞게끔 재정의하는 것을
-    // "오버라이딩(overriding)"이라 한다.
+    //     "오버라이딩(overriding)"이라 한다.
     //
     // StringBuffer는 재정의 하지 않아서 다르다고 결과가 나온건가요?
     // => 예!

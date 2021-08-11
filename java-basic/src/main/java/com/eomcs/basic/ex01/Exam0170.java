@@ -40,15 +40,18 @@ public class Exam0170 {
     // 인스턴스 복제
     // 방법1:
     // => 직접 복제한다. 즉 새 객체를 만들어 기존 객체의 값을 저장한다.
-    Score s2 = new Score(s1.name, s1.kor, s1.eng, s1.math);
 
+    Score s2 = new Score(s1.name, s1.kor, s1.eng, s1.math);
+    Score s3 = s1;
     // s1과 s2는 서로 다른 인스턴스이다.
     System.out.println(s1 == s2);
+    System.out.println(s1 == s3);
+    System.out.println("안녕");
 
     // s1과 s2에 들어 있는 값은 같다.
     System.out.println(s1);
     System.out.println(s2);
-
+    System.out.println(s3);
     // 방법2:
     // Object에서 상속 받은 clone()을 호출한다.
     //    Score s3 = s1.clone(); // 컴파일 오류! 

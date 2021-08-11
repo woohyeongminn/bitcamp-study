@@ -16,7 +16,6 @@ public class Exam0121 {
     //      return "My [name=" + name + ", age=" + age + "]";
     //    }
 
-
   }
 
   public static void main(String[] args) {
