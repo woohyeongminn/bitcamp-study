@@ -9,8 +9,7 @@ class Patient {
   int age;
   int height;
   int weight;
-  int gender;    
-  // 추상화 
+  int gender;
 
   @Override
   public String toString() {

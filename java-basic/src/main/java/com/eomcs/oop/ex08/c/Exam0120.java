@@ -48,7 +48,6 @@ class Patient2 {
       this.weight = weight;
   }
 
-
   public int getGender() {
     return gender;
   }

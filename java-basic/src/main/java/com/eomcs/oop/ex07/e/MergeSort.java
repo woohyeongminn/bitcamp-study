@@ -75,7 +75,7 @@ public class MergeSort extends Sorter {
 
   // Main function that sorts arr[l..r] using
   // merge()
-  void sort(int arr[], int l, int r)     // overloding
+  void sort(int arr[], int l, int r)
   {
     if (l < r)
     {

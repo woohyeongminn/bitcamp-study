@@ -4,13 +4,12 @@ package com.eomcs.oop.ex08.b;
 public class Exam0211 {
 
   public static void main(String[] args) {
-    X obj1 = new X();
+    X obj = new X();
 
-    //    obj1.privateVar = 100; // 접근 불가! 오직 그 클래스 안에서만 사용가능.
-    obj1.defaultVar = 100; // OK! 이 클래스는 A 클래스와 같은 패키지에 소속되어 있다.
-    obj1.protectedVar = 100; // OK! 비록 이 클래스가 자식클래스는 아니지만 같은 패키지에 소속되어 있다.
-    obj1.publicVar = 100; // OK! 모두 다 접근 가능!
-
+    //    obj.privateVar = 100; // 접근 불가! 오직 그 클래스 안에서만 사용가능.
+    obj.defaultVar = 100; // OK! 이 클래스는 A 클래스와 같은 패키지에 소속되어 있다.
+    obj.protectedVar = 100; // OK! 비록 이 클래스가 자식클래스는 아니지만 같은 패키지에 소속되어 있다.
+    obj.publicVar = 100; // OK! 모두 다 접근 가능!
   }
 }
 
@@ -20,7 +19,7 @@ public class Exam0211 {
 // public       : 모두 접근 가능
 //
 // 실무
-// => 인스턴스 변수는 보통 private으로 접근을 제한한다.
+// => 인스턴스 변수는 보통 private 으로 접근을 제한한다.
 // => 겟터,셋터는 public으로 접근을 모두에게 공개한다.
 // => 일반 메서드도 public으로 접근을 모두에게 공개한다.
 // => 그 클래스 내부에서만 사용되는 메서드는 private으로 접근을 제한한다.

@@ -11,7 +11,9 @@ abstract class Letter {
   }
 
   // 수퍼 클래스에서 기능이 어떻게 동작하는지 정의한다.
-  public void print() {
+  // => 템플릿의 역할을 하는 메서드를 수퍼 클래스에 둔다.
+  // => 자세한 구현은 서브 클래스에 맡긴다.
+  public void print() { // <== 템플릿 메서드 디자인 패턴에서 "템플릿 메서드"에 해당한다. 
     this.printHeader();
     System.out.println(this.content);
     System.out.println();
@@ -26,11 +28,6 @@ abstract class Letter {
   public abstract void printFooter();
   public abstract String getSign();
 }
-
-
-
-
-
 
 // 상세한 기능에 대한 구현은 다음과 같이 서브 클래스에게 맡긴다.
 class LoveLetter extends Letter {
@@ -51,12 +48,6 @@ class LoveLetter extends Letter {
 
   }
 }
-
-
-
-
-
-
 
 class ReportLetter extends Letter {
   @Override

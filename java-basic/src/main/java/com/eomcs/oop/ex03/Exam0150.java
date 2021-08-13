@@ -48,13 +48,13 @@ public class Exam0150 {
     System.out.printf("%d, %s, %d\n", Student.count, s3.name, s3.age);
 
     // 클래스 필드에 접근할 때는 다음과 같이 레퍼런스를 통해서도 접근할 수 있다.
-    System.out.println(Student.count);
+    System.out.println(s1.count);
     System.out.println(s2.count);
     System.out.println(s3.count);
     // - 인스턴스에 count라는 변수가 없으면 클래스에서 찾는다.
     // - 하지만 이렇게 사용하지 말라!
     // - 다른 개발자가 이 코드를 봤을 때, count가 인스턴스 변수라고 착각할 것이다.
-    // "클래스 변수는 클래스 이름을 사용하여 접근하라!"
+    //   "클래스 변수는 클래스 이름을 사용하여 접근하라!"
   }
 }
 

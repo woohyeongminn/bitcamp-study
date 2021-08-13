@@ -26,7 +26,6 @@ public class Exam0740 {
       System.out.println("세 번째 인스턴스 초기화 블록");
     }
 
-
     A() {
       // 인스턴스 초기화 블록은 선언된 순서대로 삽입한다.
       // 즉 다음과 같다.
@@ -41,7 +40,6 @@ public class Exam0740 {
       b = 200;
       c = 300;
     }
-
   }
 
   public static void main(String[] args) {

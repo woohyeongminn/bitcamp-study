@@ -19,6 +19,7 @@ class Customer4 {
   private int age;
   private int weight;
   private int height;
+
   public String getName() {
     return name;
   }
@@ -43,9 +44,6 @@ class Customer4 {
   public void setHeight(int height) {
     this.height = height;
   }
-
-
-
 }
 
 public class Exam0140 {

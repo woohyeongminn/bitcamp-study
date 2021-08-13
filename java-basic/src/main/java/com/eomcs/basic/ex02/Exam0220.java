@@ -10,8 +10,10 @@ public class Exam0220 {
     // 매우 불편한다.
 
     // int ==> Integer
-    int i1 = 100;
-    Integer obj1 = Integer.valueOf(i1);
+    int i1 = 100;    
+    Integer obj1 = Integer.valueOf(i1); 
+    System.out.println(obj1);
+    System.out.println(i1);
 
     // Integer ==> int
     Integer obj2 = Integer.valueOf(200);

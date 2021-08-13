@@ -31,7 +31,7 @@ public class Exam0110 {
   public static void main(String[] args) {
     A a = new A();
     a.m(); // A의 멤버 호출. OK!
-    //((A2)a).x(); // A 객체를 A2 객체라 우기면, 컴파일러는 통과! 실행은 오류!
+    //    ((A2)a).x(); // A 객체를 A2 객체라 우기면, 컴파일러는 통과! 실행은 오류!
     System.out.println("--------------------");
 
     A2 a2 = new A2();

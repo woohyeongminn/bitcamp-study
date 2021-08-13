@@ -6,15 +6,13 @@ public class X {
   protected int protectedVar;
   public int publicVar;
 
-
   private void privateMethod() {}
   void defaultMethod() {}
   protected void protectedMethod() {}
   public void publicMethod() {}
 
-
   public void test() {
-    // 같은 클래스의 멤버인 경우 접근 제한없이 모든 멤버에 접근할 수 있다.
+    // 같은 클래스의 멤버(필드나 메서드)인 경우 제한없이 모든 멤버에 접근할 수 있다.
     this.privateVar = 100;
     this.defaultVar = 100;
     this.protectedVar = 100;
@@ -25,5 +23,4 @@ public class X {
     this.protectedMethod();
     this.publicMethod();
   }
-
 }

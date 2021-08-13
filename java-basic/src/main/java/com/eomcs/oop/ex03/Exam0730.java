@@ -12,7 +12,7 @@ public class Exam0730 {
       // 자바 컴파일러는 필드 초기화(variable initializer)나 
       // 인스턴스 초기화 블록(initializer block)이 있으면 
       // 선언된 순서대로 모든 생성자의 첫 부분에 복사한다.
-      // 즉 위에 선언된 초기화 블록에 안에 있는 코드가 그대로 다음과 같이 
+      // 즉 선언된 초기화 블록에 안에 있는 코드가 그대로 다음과 같이 
       // 복사된다.
       // Java Tutorial 문서: Learning the Java Language > Classes and Objects
       // 'The Java compiler copies initializer blocks 
@@ -21,8 +21,8 @@ public class Exam0730 {
       //  to share a block of code 
       //  between multiple constructors.'
       // 
-      //      a = 100;
-      //      System.out.println("Hello!");
+      // a = 100;
+      // System.out.println("Hello!");
 
       System.out.println("A()");
       b = 200;
@@ -49,7 +49,7 @@ public class Exam0730 {
       this.c = c;
     }
 
-    {   // 인스턴스 초기화 블럭 (initializer block)
+    { // 인스턴스 초기화 블록 (initializer block)
       a = 100;
       System.out.println("Hello!");
     }

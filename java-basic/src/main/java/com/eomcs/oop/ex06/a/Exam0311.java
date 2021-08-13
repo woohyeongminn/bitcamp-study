@@ -17,7 +17,7 @@ public class Exam0311 {
     // 검사한다. 따라서 실행 오류 발생!
     s.cc = 1980;
     s.valve = 16;
-    s.sunroof = true;  
+    s.sunroof = true;
     s.auto = true;
 
     System.out.printf("%s, %d, %d, %d, %b, %b\n",
