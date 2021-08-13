@@ -1,7 +1,11 @@
 //static nested class : import static 사용 전
 package com.eomcs.oop.ex11.b;
 
+// 패키지 import 하기
 import com.eomcs.oop.ex11.b.sub.M;
+
+/////////////////////////////////////////
+/////////////////////////////////////////
 
 class D {
   static int v1;
@@ -14,6 +18,9 @@ class D {
     }
   }
 }
+
+/////////////////////////////////////////
+/////////////////////////////////////////
 
 public class Exam0410 {
 

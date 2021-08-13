@@ -6,9 +6,12 @@ public class M {
 
   public static void m2() {}
 
+  ////////////////////////////////////// 
   public static class Y {
     public void test() {
       System.out.println("M.Y.test()");
     }
   }
+  //////////////////////////////////////
+
 }

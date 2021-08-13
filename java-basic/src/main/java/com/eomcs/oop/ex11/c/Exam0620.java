@@ -1,11 +1,15 @@
 // inner class : inner 클래스에서 변수를 찾는 순서 II
 package com.eomcs.oop.ex11.c;
 
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
 class H {
-  int v1 = 1;
+  int v1 = 1;    
   int v2 = 2;
   int v3 = 3; 
 
+  /////////////////////////////////////////
   class X {
     int v1 = 10;
     int v2 = 20;
@@ -25,14 +29,18 @@ class H {
       System.out.printf("v3 = %d\n", v3);
     }
   }
+  /////////////////////////////////////////
 }
+
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 
 public class Exam0620 {
 
   public static void main(String[] args) {
     H outer = new H();
 
-    H.X obj = outer.new X();
+    H.X obj = outer.new X();  // new X(outer);
     obj.m1(100);
 
   }
