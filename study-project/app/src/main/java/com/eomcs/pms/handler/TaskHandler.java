@@ -1,8 +1,8 @@
 package com.eomcs.pms.handler;
 
 import java.sql.Date;
+import java.util.List;
 import com.eomcs.pms.domain.Task;
-import com.eomcs.util.List;
 import com.eomcs.util.Prompt;
 
 public class TaskHandler {
@@ -38,7 +38,10 @@ public class TaskHandler {
   public void list() {
     System.out.println("[작업 목록]");
 
-    Object[] list = taskList.toArray();
+    Task[] list = taskList.toArray(new Task[0]);
+    //    Task[] list = new Task[taskList.size()];
+    //    list = taskList.toArray(list);
+
 
     for (Object obj : list) {
       Task task = (Task) obj;
@@ -147,9 +150,11 @@ public class TaskHandler {
   }
 
   private Task findByNo(int no) {
-    Object[] arr = taskList.toArray();
-    for (Object obj : arr) {
-      Task task = (Task) obj;
+
+    //    Task[] arr = new Task[taskList.size()];
+    //    taskList.toArray(arr);
+    Task[] arr = taskList.toArray(new Task[0]);
+    for (Task task : arr) {
       if (task.getNo() == no) {
         return task;
       }
