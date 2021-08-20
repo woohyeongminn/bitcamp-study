@@ -2,13 +2,14 @@ package com.eomcs.pms.handler;
 
 import java.sql.Date;
 import com.eomcs.pms.domain.Member;
+import com.eomcs.util.List;
 import com.eomcs.util.Prompt;
 
 public class MemberHandler {
 
-  List memberList;
+  List<Member> memberList;
 
-  public MemberHandler(List memberList) {
+  public MemberHandler(List<Member> memberList) {
     this.memberList = memberList;
   }
 
@@ -26,6 +27,8 @@ public class MemberHandler {
     member.setRegisteredDate(new Date(System.currentTimeMillis()));
 
     memberList.add(member);
+    //  특정 타입으로 제한  
+    // memberList.add(new String("Hello"));   //컴파일 오류!!
   }
 
   public void list() {
