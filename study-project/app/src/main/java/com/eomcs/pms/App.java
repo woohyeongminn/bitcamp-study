@@ -20,7 +20,6 @@ public class App {
   List<Member> memberList = new LinkedList<>();
   List<Project> projectList = new ArrayList<>();
   List<Task> taskList = new LinkedList<>();  
-  //  객체를 생성하는 시점에 그 타입이 정해진다.
 
   BoardHandler boardHandler = new BoardHandler(boardList);
   MemberHandler memberHandler = new MemberHandler(memberList);

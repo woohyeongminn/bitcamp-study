@@ -23,6 +23,7 @@ class C {
       //
       void f() {
         System.out.printf("v1 = %d\n", C.this.v1);
+        C.this.v1 = 9;
       }
     }
     X obj = new X();

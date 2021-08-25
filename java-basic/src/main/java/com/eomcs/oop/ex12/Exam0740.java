@@ -3,6 +3,8 @@ package com.eomcs.oop.ex12;
 
 public class Exam0740 {
 
+
+  /////////////////////////////////////////////////////////
   static class Message {
     String name;
 
@@ -13,6 +15,7 @@ public class Exam0740 {
     public Message(String name) {
       this.name = name;
     }
+    /////////////////////////////////////////////////////////
 
     public void print() {
       System.out.printf("%s님 반갑습니다!\n", name);
@@ -55,7 +58,7 @@ public class Exam0740 {
     //    };
 
     // Factory(String,int) 생성자가 없기 때문에 컴파일 오류!
-    //    Factory3 f3 = Message::new; // 컴파일 오류!
+    //   Factory3 f3 = Message::new; // 컴파일 오류!
     //=> 즉 컴파일러는 Message 의 생성자 중에서 
     //   String과 int를 파라미터 받는 생성자를 호출하는 Factory 구현체를 만들어야 하는데,
     //   Message 클래스에는 String과 int를 파라미터로 받는 생성자가 없기 때문에 
