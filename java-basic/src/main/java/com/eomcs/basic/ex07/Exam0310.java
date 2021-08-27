@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 public class Exam0310 {
 
+  /////////////////////////////////////////////////////////////////////
   // 사용자 정의 데이터 타입
   static class Member {
     String name;
@@ -19,7 +20,9 @@ public class Exam0310 {
     public String toString() {
       return "Member [name=" + name + ", age=" + age + "]";
     }
+
   }
+  /////////////////////////////////////////////////////////////////////
 
   public static void main(String[] args) {
     Member v1 = new Member("홍길동", 20);

@@ -2,11 +2,12 @@
 package com.eomcs.basic.ex08;
 
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 public class Exam0420 {
   public static void main(String[] args) {
-
+    HashMap<String,Member> map = new HashMap<>();
     Hashtable<String,Member> table = new Hashtable<>();
     table.put("s01", new Member("홍길동", 20));
     table.put("s02", new Member("임꺽정", 30));

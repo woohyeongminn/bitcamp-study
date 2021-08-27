@@ -76,13 +76,13 @@ public class MenuGroup extends Menu {
     return null;
   }
 
-  @Override  // 컴파일러에게 오버라이딩을 제대로 하는지 조사해 달라고 요구한다.
+  @Override // 컴파일러에게 오버라이딩을 제대로 하는지 조사해 달라고 요구한다.
   public void execute() {
     // 현재 실행하는 메뉴를 스택에 보관한다.
     breadCrumb.push(this);
 
     while (true) {
-      System.out.printf("\n[%s]\n", getBreadCrumB());
+      System.out.printf("\n[%s]\n", getBreadCrumb());
       for (int i = 0; i < this.size; i++) {
         System.out.printf("%d. %s\n", i + 1, this.childs[i].title);
       }
@@ -91,33 +91,49 @@ public class MenuGroup extends Menu {
         System.out.printf("0. %s\n", this.prevMenuTitle);
       }
 
-      int menuNo = Prompt.inputInt("선택> ");
-      if (menuNo == 0 && !disablePrevMenu) {
-        // 현재 메뉴에서 나갈 때 스택에서 제거한다.
-        breadCrumb.pop();
-        return;
-      }
+      try {
+        int menuNo = Prompt.inputInt("선택> ");
+        if (menuNo == 0 && !disablePrevMenu) {
+          // 현재 메뉴에서 나갈 때 스택에서 제거한다.
+          breadCrumb.pop();
+          return;
+        }
 
-      if (menuNo < 0 || menuNo > this.size) {
-        System.out.println("무효한 메뉴 번호입니다.");
-        continue;
-      }
+        if (menuNo < 0 || menuNo > this.size) {
+          System.out.println("무효한 메뉴 번호입니다.");
+          continue;
+        }
 
-      this.childs[menuNo - 1].execute();
+        this.childs[menuNo - 1].execute();
+      } catch (Throwable e) {
+        // try 블록 안에 있는 코드를 실행하다가 예외가 발생하더라도
+        // 다음 문장을 실행한 후 시스템을 멈추지 않고 실행을 계속한다.
+        System.out.println("-----------------------------------------");
+        System.out.printf("오류 발생: %s\n", e.getClass().getName());
+        System.out.println("-----------------------------------------");
+      }
     }
   }
 
-  public String getBreadCrumB() {
+  private String getBreadCrumb() {
     String path = "";
 
     for (int i = 0; i < breadCrumb.size(); i++) {
       if (path.length() > 0) {
         path += " / ";
       }
-      Menu menu = breadCrumb.get(i);
+      Menu menu = breadCrumb.get(i); 
       path += menu.title;
     }
+
     return path;
   }
 
 }
+
+
+
+
+
+
+
