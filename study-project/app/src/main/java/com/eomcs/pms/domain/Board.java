@@ -6,10 +6,35 @@ public class Board {
   private int no;
   private String title;
   private String content;
-  private String writer;
+  private Member writer;
   private Date registeredDate;
   private int viewCount;
   private int like;
+
+  //  @Override
+  //  public int hashCode() {
+  //    return Objects.hash(content, like, no, registeredDate, title, viewCount);
+  //  }
+  //  @Override
+  //  public boolean equals(Object obj) {
+  //    if (this == obj)
+  //      return true;
+  //    if (obj == null)
+  //      return false;
+  //    if (getClass() != obj.getClass())
+  //      return false;
+  //    Board other = (Board) obj;
+  //    return Objects.equals(content, other.content) && like == other.like && no == other.no
+  //        && Objects.equals(registeredDate, other.registeredDate)
+  //        && Objects.equals(title, other.title) && viewCount == other.viewCount;
+  //  }
+
+  @Override
+  public String toString() {
+    return "Board [no=" + no + ", title=" + title + ", content=" + content + ", writer=" + writer
+        + ", registeredDate=" + registeredDate + ", viewCount=" + viewCount + ", like=" + like
+        + "]";
+  }
 
   public int getNo() {
     return no;
@@ -29,12 +54,6 @@ public class Board {
   public void setContent(String content) {
     this.content = content;
   }
-  public String getWriter() {
-    return writer;
-  }
-  public void setWriter(String writer) {
-    this.writer = writer;
-  }
   public Date getRegisteredDate() {
     return registeredDate;
   }
@@ -53,6 +72,13 @@ public class Board {
   public void setLike(int like) {
     this.like = like;
   }
+  public Member getWriter() {
+    return writer;
+  }
+  public void setWriter(Member writer) {
+    this.writer = writer;
+  }
+
 
 
 
