@@ -33,12 +33,6 @@ public class Task {
   public void setDeadline(Date deadline) {
     this.deadline = deadline;
   }
-  public Member getOwner() {
-    return owner;
-  }
-  public void setOwner(Member owner) {
-    this.owner = owner;
-  }
   public int getStatus() {
     return status;
   }
@@ -51,4 +45,11 @@ public class Task {
   public void setProject(Project project) {
     this.project = project;
   }
+  public Member getOwner() {
+    return owner;
+  }
+  public void setOwner(Member owner) {
+    this.owner = owner;
+  }
+
 }

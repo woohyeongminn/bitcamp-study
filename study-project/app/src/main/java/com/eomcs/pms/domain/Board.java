@@ -11,24 +11,6 @@ public class Board {
   private int viewCount;
   private int like;
 
-  //  @Override
-  //  public int hashCode() {
-  //    return Objects.hash(content, like, no, registeredDate, title, viewCount);
-  //  }
-  //  @Override
-  //  public boolean equals(Object obj) {
-  //    if (this == obj)
-  //      return true;
-  //    if (obj == null)
-  //      return false;
-  //    if (getClass() != obj.getClass())
-  //      return false;
-  //    Board other = (Board) obj;
-  //    return Objects.equals(content, other.content) && like == other.like && no == other.no
-  //        && Objects.equals(registeredDate, other.registeredDate)
-  //        && Objects.equals(title, other.title) && viewCount == other.viewCount;
-  //  }
-
   @Override
   public String toString() {
     return "Board [no=" + no + ", title=" + title + ", content=" + content + ", writer=" + writer
@@ -78,8 +60,5 @@ public class Board {
   public void setWriter(Member writer) {
     this.writer = writer;
   }
-
-
-
 
 }
