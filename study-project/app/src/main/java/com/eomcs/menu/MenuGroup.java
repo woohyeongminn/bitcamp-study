@@ -15,10 +15,20 @@ public class MenuGroup extends Menu {
   // 모든 메뉴가 공유할 객체이기 때문에 스태틱 멤버로 선언한다.
   static Stack<Menu> breadCrumb = new Stack<>();
 
-  List<Menu> childs = new ArrayList<>();
+  ArrayList<Menu> childs = new ArrayList<>();
+
   boolean disablePrevMenu;
   String prevMenuTitle = "이전 메뉴";
 
+  // 이전으로 이동시키는 메뉴를 표현하기 위해 만든 클래스
+  private static class PrevMenu extends Menu {
+    public PrevMenu() {
+      super("");
+    }
+    @Override
+    public void execute() {
+    }
+  }
   static PrevMenu prevMenu = new PrevMenu();
 
   public MenuGroup(String title) {
@@ -28,7 +38,6 @@ public class MenuGroup extends Menu {
   public MenuGroup(String title, int accessScope) {
     super(title, accessScope);
   }
-
 
   public MenuGroup(String title, boolean disablePrevMenu) {
     super(title);
@@ -40,32 +49,20 @@ public class MenuGroup extends Menu {
     this.disablePrevMenu = disablePrevMenu;
   }
 
-  // 이전으로 이동시키는 메뉴를 표현하기 위해 만든 클래스
-  private static class PrevMenu extends Menu {
-    public PrevMenu() {
-      super("");
-    }
-    @Override
-    public void execute() {
-    }
-  }
-
   public void setPrevMenuTitle(String prevMenuTitle) {
     this.prevMenuTitle = prevMenuTitle;
   }
 
   // MenuGroup이 포함하는 하위 Menu를 다룰 수 있도록 메서드를 정의한다.
   public void add(Menu child) {
-    childs.add(child);
+    childs.add(child); 
   }
 
   // 배열에 들어 있는 Menu 객체를 찾아 제거한다.
   public Menu remove(Menu child) {
-    if (childs.remove(child)) {
+    if (childs.remove(child)) 
       return child;
-    }
     return null;
-
   }
 
   @Override // 컴파일러에게 오버라이딩을 제대로 하는지 조사해 달라고 요구한다.
@@ -126,8 +123,8 @@ public class MenuGroup extends Menu {
     ArrayList<Menu> menuList = new ArrayList<>();
     for (Menu menu : childs) {
       // 사용자가 해당 메뉴에 접근 할 수 있는지 검사한다.
-      //   예) 메뉴의 접근 범위 :   0100
-      //       사용자의 접근 수준 : 0110  => 관리자 및 일반 메뉴 접근 가능
+      //    예) 메뉴의 접근 범위:   0100  = 관리자만 접근 가능   
+      //        사용자의 접근 수준: 0110  = 관리자 및 일반 메뉴 접근 가능
       if ((menu.accessScope & AuthLoginHandler.getUserAccessLevel()) > 0 ) {
         menuList.add(menu);
       } 

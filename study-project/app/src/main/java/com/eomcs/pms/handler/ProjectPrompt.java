@@ -8,7 +8,6 @@ public class ProjectPrompt {
 
   protected List<Project> projectList;
 
-
   public ProjectPrompt(List<Project> projectList) {
     this.projectList = projectList;
   }
@@ -39,5 +38,4 @@ public class ProjectPrompt {
     }
     return null;
   }
-
 }

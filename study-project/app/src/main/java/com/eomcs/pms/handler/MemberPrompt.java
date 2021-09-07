@@ -7,7 +7,7 @@ import com.eomcs.util.Prompt;
 
 public class MemberPrompt {
 
-  protected List<Member> memberList;
+  List<Member> memberList;
 
   public MemberPrompt(List<Member> memberList) {
     this.memberList = memberList;
