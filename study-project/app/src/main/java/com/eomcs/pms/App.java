@@ -30,6 +30,7 @@ import com.eomcs.pms.handler.BoardListHandler;
 import com.eomcs.pms.handler.BoardSearchHandler;
 import com.eomcs.pms.handler.BoardUpdateHandler;
 import com.eomcs.pms.handler.Command;
+import com.eomcs.pms.handler.CommandRequest;
 import com.eomcs.pms.handler.MemberAddHandler;
 import com.eomcs.pms.handler.MemberDeleteHandler;
 import com.eomcs.pms.handler.MemberDetailHandler;
@@ -78,7 +79,12 @@ public class App {
     @Override
     public void execute() {
       Command command = commandMap.get(menuId);
-      command.execute();
+      try {
+        command.execute(new CommandRequest(commandMap));
+      } catch (Exception e) {
+        System.out.printf("%s 명령을 실행하는 중 오류 발생!\n", menuId);
+        e.printStackTrace();
+      }
     }
   }
 
@@ -88,11 +94,12 @@ public class App {
   }
 
   public App() {
+
     commandMap.put("/board/add", new BoardAddHandler(boardList));
     commandMap.put("/board/list", new BoardListHandler(boardList));
-    commandMap.put("/board/detail", new BoardDetailHandler(boardList));
     commandMap.put("/board/update", new BoardUpdateHandler(boardList));
     commandMap.put("/board/delete", new BoardDeleteHandler(boardList));
+    commandMap.put("/board/detail", new BoardDetailHandler(boardList));
     commandMap.put("/board/search", new BoardSearchHandler(boardList));
 
     commandMap.put("/member/add", new MemberAddHandler(memberList));
@@ -119,7 +126,11 @@ public class App {
   }
 
   void service() {
-    // 여러 타입의 CSV 데이터를 로딩하는 메서드
+    System.out.println("***************************************");
+    System.out.println("* 미니 프로젝트 관리시스템 ver 1.0    *");
+    System.out.println("*        (C)Copyright Bitcamp         *");
+    System.out.println("***************************************");
+
     loadObjects("board.json", boardList, Board.class);
     loadObjects("member.json", memberList, Member.class);
     loadObjects("project.json", projectList, Project.class);
@@ -139,7 +150,6 @@ public class App {
       Class<E> domainType // 생성할 객체의 타입정보
       ) {
 
-    // CSV 형식으로 저장된 게시글 데이터를 파일에서 읽어 객체에 담는다. 
     try (BufferedReader in = new BufferedReader(
         new FileReader(filepath, Charset.forName("UTF-8")))) {
 
@@ -149,8 +159,8 @@ public class App {
         strBuilder.append(str);
       }
 
-      // *StringBuilder로 읽어온 JSON 문자열을 객체로 바꾼다.
-      Type type = TypeToken.getParameterized(Collection.class, domainType).getType();
+      // StringBuilder로 읽어 온 JSON 문자열을 객체로 바꾼다.
+      Type type = TypeToken.getParameterized(Collection.class, domainType).getType(); 
       Collection<E> collection = new Gson().fromJson(strBuilder.toString(), type);
 
       // JSON 데이터로 읽어온 목록을 파라미터로 받은 List 에 저장한다.
@@ -201,8 +211,8 @@ public class App {
     boardMenu.add(new MenuItem("등록", ACCESS_GENERAL, "/board/add"));
     boardMenu.add(new MenuItem("목록", "/board/list"));
     boardMenu.add(new MenuItem("상세보기", "/board/detail"));
-    boardMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/board/update"));
-    boardMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/board/delete"));
+    //    boardMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/board/update"));
+    //    boardMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/board/delete"));
     boardMenu.add(new MenuItem("검색", "/board/search"));
     return boardMenu;
   }
@@ -212,8 +222,8 @@ public class App {
     memberMenu.add(new MenuItem("등록", ACCESS_GENERAL, "/member/add"));
     memberMenu.add(new MenuItem("목록", "/member/list"));
     memberMenu.add(new MenuItem("상세보기", "/member/detail"));
-    memberMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/member/update"));
-    memberMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/member/delete"));
+    //    memberMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/member/update"));
+    //    memberMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/member/delete"));
     return memberMenu;
   }
 
@@ -222,8 +232,8 @@ public class App {
     projectMenu.add(new MenuItem("등록", ACCESS_GENERAL, "/project/add"));
     projectMenu.add(new MenuItem("목록", "/project/list"));
     projectMenu.add(new MenuItem("상세보기", "/project/detail"));
-    projectMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/project/update"));
-    projectMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/project/delete"));
+    //    projectMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/project/update"));
+    //    projectMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/project/delete"));
     return projectMenu;
   }
 
@@ -232,8 +242,8 @@ public class App {
     taskMenu.add(new MenuItem("등록", ACCESS_GENERAL, "/task/add"));
     taskMenu.add(new MenuItem("목록", "/task/list"));
     taskMenu.add(new MenuItem("상세보기", "/task/detail"));
-    taskMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/task/update"));
-    taskMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/task/delete"));
+    //    taskMenu.add(new MenuItem("변경", ACCESS_GENERAL, "/task/update"));
+    //    taskMenu.add(new MenuItem("삭제", ACCESS_GENERAL, "/task/delete"));
     return taskMenu;
   }
 

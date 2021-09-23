@@ -17,7 +17,7 @@ public class Task implements CsvValue {
         + ", status=" + status + ", project=" + project + "]";
   }
 
-  //다음 메서드는 CsvValue 규칙에 따라 정의한 메서드다.
+  // 다음 메서드는 CsvValue 규칙에 따라 정의한 메서드다.
   @Override
   public String toCsvString() {
     return String.format("%d,%s,%s,%d,%d,%s",
@@ -29,7 +29,7 @@ public class Task implements CsvValue {
         this.getOwner().getName());
   }
 
-  //다음 메서드는 파라미터로 받은 CSV 문자열에서 값을 추출하여 
+  // 다음 메서드는 파라미터로 받은 CSV 문자열에서 값을 추출하여 
   // Task 객체의 각 필드에 저장한다.
   @Override
   public void loadCsv(String csv) {
