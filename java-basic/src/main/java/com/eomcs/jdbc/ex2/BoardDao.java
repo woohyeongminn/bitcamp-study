@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,13 +49,14 @@ public class BoardDao {
   public int insert(Board board) throws Exception {
     try (Connection con = DriverManager.getConnection( //
         "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
-        PreparedStatement stmt =
-            con.prepareStatement("insert into x_board(title,contents) values(?,?)");) {
+        Statement stmt =
+            con.createStatement();) {
 
-      stmt.setString(1, board.getTitle());
-      stmt.setString(2, board.getContent());
+      String sql = String.format("insert into x_board(title,contents) values('%s','%s')",
+          board.getTitle(),
+          board.getContent());
 
-      return stmt.executeUpdate();
+      return stmt.executeUpdate(sql);
     }
   }
 
