@@ -1,51 +1,48 @@
 package com.eomcs.pms;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
+import com.eomcs.pms.table.BoardTable;
+import com.eomcs.pms.table.MemberTable;
+import com.eomcs.pms.table.ProjectTable;
+import com.eomcs.server.DataProcessor;
+import com.eomcs.server.RequestProcessor;
 
 public class ServerApp {
 
   public static void main(String[] args) throws Exception {
     System.out.println("[PMS 서버]");
 
-    System.out.println("1) 서버 소캣 준비");
-    ServerSocket serverSocket = new ServerSocket(8888);  // 고정 포토번호 주기
+    System.out.println("서버 실행중");
+    ServerSocket serverSocket = new ServerSocket(8888);
 
-    System.out.println("2) 클라이언트의 접속을 기다림");
-    Socket socket = serverSocket.accept(); // 클라이언트가 접속하면 리턴한다.
+    // RequestProcessor 가 사용할 DataProcessor 맵 준비
+    HashMap<String,DataProcessor> dataProcessorMap = new HashMap<String,DataProcessor>();
 
-    System.out.println("3) 클라이언트가 접속 했음");
-
-    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-    PrintWriter out =new PrintWriter(socket.getOutputStream());
+    // => 데이터 처리 담당자를 등록한다.
+    dataProcessorMap.put("board.", new BoardTable());
+    dataProcessorMap.put("member.", new MemberTable());
+    dataProcessorMap.put("project.", new ProjectTable());
 
     while (true) {
-      String command = in.readLine(); // 클라이언트에서 한 줄의 문자열을 보낼 때까지 기다린다.
-      System.out.println("===> " + command);
+      Socket socket = serverSocket.accept();
+      System.out.println("클라이언트 접속");
 
-      if (command.equalsIgnoreCase("quit")) {
-        out.println("goodbye");
-        out.flush();
-        break;
-      }
+      // 1) 새 실행 흐름 생성
+      RequestProcessor requestProcessor = new RequestProcessor(socket, dataProcessorMap);
 
-      out.println(command);
-      out.flush();
+      // 2) 새로 생성한 실행 흐름을 시작시킨다.
+      // => run()이 호출될 것이다.
+      // => 시작시킨 후 즉시 리턴한다. 
+      //    즉 새로 생성한 실행 흐름이 종료될 때까지 기다리지 않는다.
+      requestProcessor.start();
     }
 
-    System.out.println("4) 클라이언트와의 접속을 끊음");
-    out.close(); 
-    in.close();
-    socket.close();
-
-    System.out.println("5) 서버 소켓 종료");
-    serverSocket.close();  // 더 이상 클라이언트의 접속을 수용하지 않는다.
+    //    System.out.println("서버 종료");
+    //    serverSocket.close();
   }
-
-} 
+}
 
 
 
