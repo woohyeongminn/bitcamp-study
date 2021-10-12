@@ -11,7 +11,7 @@ public class Exam0250 {
     try (Scanner keyScan = new Scanner(System.in)) {
       System.out.print("번호? ");
       no = Integer.parseInt(keyScan.nextLine());
-    }
+    } 
 
     try {
       BoardDao boardDao = new BoardDao();

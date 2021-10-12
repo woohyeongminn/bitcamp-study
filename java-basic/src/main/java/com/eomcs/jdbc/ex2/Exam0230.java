@@ -7,10 +7,11 @@ public class Exam0230 {
 
   public static void main(String[] args) throws Exception {
     String no = null;
+
     try (Scanner keyScan = new Scanner(System.in)) {
       System.out.print("번호? ");
       no = keyScan.nextLine();
-    }
+    } 
 
     try {
       BoardDao boardDao = new BoardDao();

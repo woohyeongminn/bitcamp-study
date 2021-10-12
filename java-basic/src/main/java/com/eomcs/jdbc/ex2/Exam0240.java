@@ -17,7 +17,7 @@ public class Exam0240 {
 
       System.out.print("내용? ");
       board.setContent(keyScan.nextLine());
-    }
+    } 
 
     try {
       BoardDao boardDao = new BoardDao();
