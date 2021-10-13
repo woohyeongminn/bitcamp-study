@@ -10,11 +10,11 @@ public class Exam0340 {
 
   public static void main(String[] args) throws Exception {
     String no = null;
-    String title = null;
+    String title = null; 
     String contents = null;
 
     try (Scanner keyScan = new Scanner(System.in)) {
-      System.out.print("번호? ");
+      System.out.print("번호? "); 
       no = keyScan.nextLine();
 
       System.out.print("제목? ");

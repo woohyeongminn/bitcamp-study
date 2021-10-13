@@ -15,7 +15,7 @@ import java.util.Scanner;
 // 등록하시겠습니까?(Y/n) n
 // 등록을 취소 하였습니다.
 // ----------------------------
-public class Exam0110 {
+public class Exam0110{
 
   public static void main(String[] args) throws Exception {
     String title = null;

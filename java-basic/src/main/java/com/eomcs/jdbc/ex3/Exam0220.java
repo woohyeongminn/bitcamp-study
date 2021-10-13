@@ -18,7 +18,7 @@ public class Exam0220 {
       no = keyboard.nextLine();
 
       System.out.print("제목? ");
-      title = keyboard.nextLine();
+      title = keyboard.nextLine(); 
 
       System.out.print("내용? ");
       contents = keyboard.nextLine();

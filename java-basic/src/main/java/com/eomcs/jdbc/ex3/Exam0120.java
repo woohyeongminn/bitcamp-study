@@ -1,5 +1,4 @@
 // Statement 와 SQL 삽입 공격
-// 원래 만들고자 하는 sql을 왜곡 시키는 것
 package com.eomcs.jdbc.ex3;
 
 import java.sql.Connection;
@@ -7,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class Exam0110 {
+public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
     String no = null;
@@ -15,6 +14,8 @@ public class Exam0110 {
     String contents = null;
 
     try (Scanner keyboard = new Scanner(System.in)) {
+      System.out.print("번호? ");
+      no = keyboard.nextLine();
 
       System.out.print("제목? ");
       title = keyboard.nextLine();
@@ -31,14 +32,29 @@ public class Exam0110 {
       // => 입력 문자열에 SQL 명령을 삽입하여 프로그램의 의도와 다르게 데이터를 조작하는 행위.
       // => 사용자가 입력한 값을 가지고 SQL 문장을 만들 때 이런 문제가 발생한다.
       // => 예를 들어 이 예제를 실행할 때 다음과 같이 입력해 보라!
-      // 제목? aaaa
-      // 내용? bbbb'), ('haha', 'hoho'), ('hehe', 'pulhul
+      // 번호? 1
+      // 제목? okok
+      // 내용? test', view_count = 300, created_date = '2019-3-3
       //
       int count = stmt.executeUpdate( 
-          "insert into x_board(title, contents) values('" 
-              + title + "','" + contents +"')");
+          "update x_board set title = '" + title + 
+          "', contents = '" + contents + 
+          "' where board_id = " + no);
 
-      System.out.println(count + " 개를 입력하였습니다.");
+      //  update x_board set title = 'xxxx', contents = 'yyyy' where board_id = 2 
+
+      // 위에서 사용자가 입력한 값을 가지고 SQL 문장을 만들면 다음과 같다.
+      //
+      // update x_board set title = 'okok',
+      // contents = 'test', view_count = 300, created_date = '2019-3-3'
+      // where board_id = 1
+      //
+
+      if (count == 0) {
+        System.out.println("해당 번호의 게시물이 존재하지 않습니다.");
+      } else {
+        System.out.println("변경하였습니다.");
+      }
     }
   }
 }

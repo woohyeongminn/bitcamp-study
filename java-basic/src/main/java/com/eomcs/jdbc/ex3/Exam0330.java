@@ -13,7 +13,7 @@ public class Exam0330 {
     String no = null;
     try (Scanner keyScan = new Scanner(System.in)) {
       System.out.print("번호? ");
-      no = keyScan.nextLine();
+      no = keyScan.nextLine();  
     }
 
     try (Connection con = DriverManager.getConnection( //

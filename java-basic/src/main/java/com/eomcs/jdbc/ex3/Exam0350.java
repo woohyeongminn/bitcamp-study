@@ -21,7 +21,7 @@ public class Exam0350 {
         PreparedStatement stmt = con.prepareStatement( //
             "delete from x_board where board_id=?")) {
 
-      stmt.setString(1, no);
+      stmt.setString(1, no); 
       int count = stmt.executeUpdate();
 
       if (count == 0) {

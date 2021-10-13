@@ -10,7 +10,7 @@ public class Exam0310 {
 
   public static void main(String[] args) throws Exception {
     String title = null;
-    String contents = null;
+    String contents = null; 
 
     try (Scanner keyScan = new Scanner(System.in)) {
 
@@ -30,7 +30,7 @@ public class Exam0310 {
       }
     }
 
-    try (Connection con = DriverManager.getConnection( //
+    try (Connection con = DriverManager.getConnection(
         "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
 
         // 값이 들어갈 자리에 in-parameter(?)를 지정한다.
@@ -39,6 +39,7 @@ public class Exam0310 {
             con.prepareStatement("insert into x_board(title,contents) values(?,?)");) {
 
       // in-parameter에 값을 설정한다.
+      // 배열과 다르게 1부터 시작한다.
       // => 설정하는 순서는 상관없다. 하지만 유지보수를 위해 순서대로 나열하라!
       stmt.setString(1, title);
       stmt.setString(2, contents);
