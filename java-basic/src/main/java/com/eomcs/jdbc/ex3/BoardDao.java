@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BoardDao {
+
   public int delete(int no) throws Exception {
     try (Connection con = DriverManager.getConnection( //
         "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
