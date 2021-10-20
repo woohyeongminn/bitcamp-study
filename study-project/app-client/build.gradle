@@ -36,8 +36,12 @@ repositories {
 // => Gradle 실행할 때 위에서 설정한 서버에 접속하여 등록한 라이브러리를 자동으로 다운로드 받는다.
 //     ㄴ 다운로드 받은 라이브러리는 컴파일하거나 실행할 때 사용된다.
 dependencies {
+
     // Google son 라이브러리
     implementation 'com.google.code.gson:gson:2.8.8'
+    
+    // MariaDB JDBC 드라이버
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
     
     testImplementation 'junit:junit:4.13.2'
 
