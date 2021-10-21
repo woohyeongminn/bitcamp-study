@@ -12,8 +12,8 @@ public class Exam0120 {
   public static void main(String[] args) throws Exception {
 
     // 1. mybatis 설정 파일을 읽을 InputStream 도구를 준비한다.
-    // => 다음과 같이 mybatis 설정 파일의 경로를 직접 지정하면
-    //    애플리케이션 배포 경로가 바뀔 때 마다
+    // => 다음과 같이 mybatis 설정 파일이 있는 경로를 직접 지정하면
+    //    애플리케이션 배포 경로가 바뀔 때 마다 파일 경로를 바꾸기 위해
     //    소스를 변경하고 다시 컴파일 해야 하는 문제가 있다.
     //      InputStream mybatisConfigInputStream = new FileInputStream(
     //           "./bin/main/com/eomcs/mybatis/ex01/a/mybatis-config.xml");
@@ -22,6 +22,10 @@ public class Exam0120 {
     // => Resources 클래스의 메서드를 이용하면
     //    자바 클래스가 있는 패키지 폴더의 mybatis 설정 파일을 바로 지정할 수 있다.
     //
+
+    //    InputStream mybatisConfigInputStream = new FileInputStream(
+    //        "./bin/main/com/eomcs/mybatis/ex01/a/mybatis-config.xml");
+
     InputStream mybatisConfigInputStream = Resources.getResourceAsStream(
         "com/eomcs/mybatis/ex01/a/mybatis-config.xml");
     // => 파라미터에 전달할 mybatis 설정 파일의 경로를 지정할 때,
@@ -41,7 +45,7 @@ public class Exam0120 {
 
     SqlSession sqlSession = factory.openSession();
 
-    System.out.println("mybatis 사용 준비 완료!");
+    System.out.println("mybatis 사용 준비 완료2!");
 
     sqlSession.close();
   }

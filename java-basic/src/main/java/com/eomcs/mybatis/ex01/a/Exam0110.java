@@ -67,7 +67,7 @@ public class Exam0110 {
     //
     SqlSession sqlSession = factory.openSession();
 
-    System.out.println("mybatis 사용 준비 완료!");
+    System.out.println("mybatis 사용 준비 완료1!");
 
     sqlSession.close();
   }

@@ -17,7 +17,6 @@ public class Exam0110 {
     // - selectList()의 리턴 타입은 List<Map> 이 된다.
     // 
     List<Map<String,Object>> list = sqlSession.selectList("BoardMapper.selectBoard");
-
     // 각각의 Map 객체에는 레코드 값이 보관되어 있다.
     // - 즉 레코드의 각 컬럼 값이 Map 객체에 보관되어 있다.
     // - 컬럼 값을 꺼낼 때는 select 할 때 사용한 컬럼이름으로 꺼내야 한다.
@@ -30,6 +29,7 @@ public class Exam0110 {
           map.get("created_date"),
           map.get("view_count"));
     }
+
 
     sqlSession.close();
   }
