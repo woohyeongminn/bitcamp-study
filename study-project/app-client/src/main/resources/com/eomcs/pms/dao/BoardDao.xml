@@ -85,6 +85,14 @@
     delete from pms_board 
     where board_no=#{no}
   </delete>
+  
+  <update id="UpdateCount" parameterType="int">
+  update pms_board set
+    view_cnt = view_cnt + 1
+  where board_no=#{no}
+  
+  </update>
+  
 </mapper>
 
 

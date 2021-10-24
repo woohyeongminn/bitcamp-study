@@ -1,5 +1,6 @@
 package com.eomcs.pms.handler;
 
+import org.apache.ibatis.session.SqlSession;
 import com.eomcs.pms.dao.ProjectDao;
 import com.eomcs.pms.domain.Project;
 import com.eomcs.util.Prompt;
@@ -7,9 +8,11 @@ import com.eomcs.util.Prompt;
 public class ProjectDeleteHandler implements Command {
 
   ProjectDao projectDao;
+  SqlSession sqlSession;
 
-  public ProjectDeleteHandler(ProjectDao projectDao) {
+  public ProjectDeleteHandler(ProjectDao projectDao, SqlSession sqlSession) {
     this.projectDao = projectDao;
+    this.sqlSession = sqlSession;
   }
 
   @Override
@@ -35,8 +38,13 @@ public class ProjectDeleteHandler implements Command {
       return;
     }
 
-    projectDao.delete(no);
-
+    try {
+      projectDao.deleteMebmer(project.getNo());
+      projectDao.delete(no);
+      sqlSession.commit();
+    } catch (Exception e) {
+      sqlSession.rollback();
+    }
     System.out.println("프로젝트를 삭제하였습니다.");
   }
 }

@@ -74,9 +74,9 @@
     values(#{title},#{content},#{startDate},#{endDate},#{owner.no})
   </insert>
 
-  <insert id="insertMember" parameterType="map">
+  <insert id="insertMember">
     insert into pms_project_member(project_no,member_no) 
-    values(#{projectNo},#{memberNo})
+    values(#{param1},#{param2})
   </insert>
 
   <update id="update" parameterType="project">
