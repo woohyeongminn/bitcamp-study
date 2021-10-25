@@ -48,6 +48,7 @@ public class MemberUpdateHandler implements Command {
     member.setPassword(password);
     member.setPhoto(photo);
     member.setTel(tel);
+
     memberDao.update(member);
     sqlSession.commit();
 

@@ -89,7 +89,7 @@ public class ClientApp {
   // => 옵저버(리스너)를 등록하는 메서드
   public void addApplicationContextListener(ApplicationContextListener listener) {
     this.listeners.add(listener);
-  }  
+  }
 
   // => 옵저버(리스너)를 제거하는 메서드
   public void removeApplicationContextListener(ApplicationContextListener listener) {
@@ -114,10 +114,6 @@ public class ClientApp {
 
     // 서버와 통신을 담당할 객체 준비
     requestAgent = null;
-
-    // DBMS와 연결한다.
-    //    con = DriverManager.getConnection(
-    //        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
 
     // Mybatis의 SqlSession 객체 준비
     sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(
@@ -161,7 +157,7 @@ public class ClientApp {
     commandMap.put("/task/detail", new TaskDetailHandler(taskDao));
     commandMap.put("/task/update", new TaskUpdateHandler(taskDao, sqlSession));
     commandMap.put("/task/delete", new TaskDeleteHandler(taskDao, sqlSession));
-  }  
+  }
 
   // MenuGroup에서 사용할 필터를 정의한다.
   MenuFilter menuFilter = menu -> (menu.getAccessScope() & AuthLoginHandler.getUserAccessLevel()) > 0;
@@ -183,7 +179,7 @@ public class ClientApp {
     mainMenuGroup.add(createAdminMenu());
 
     return mainMenuGroup;
-  } 
+  }
 
   private Menu createBoardMenu() {
     MenuGroup boardMenu = new MenuGroup("게시판");

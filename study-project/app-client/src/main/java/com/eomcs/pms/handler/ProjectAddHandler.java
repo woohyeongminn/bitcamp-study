@@ -12,8 +12,7 @@ public class ProjectAddHandler implements Command {
   MemberPrompt memberPrompt;
   SqlSession sqlSession;
 
-  public ProjectAddHandler(
-      ProjectDao projectDao, MemberPrompt memberPrompt, SqlSession sqlSession) {
+  public ProjectAddHandler(ProjectDao projectDao, MemberPrompt memberPrompt, SqlSession sqlSession) {
     this.projectDao = projectDao;
     this.memberPrompt = memberPrompt;
     this.sqlSession = sqlSession;
@@ -34,19 +33,15 @@ public class ProjectAddHandler implements Command {
 
     try {
       projectDao.insert(project);
-
       for (Member m : project.getMembers()) {
         projectDao.insertMember(project.getNo(), m.getNo());
       }
-
       sqlSession.commit();
-
     } catch (Exception e) {
       // 예외가 발생하기 전에 성공한 작업이 있으면 모두 취소한다.
       // 그래야 다음 작업에 영향을 끼치지 않는다.
       sqlSession.rollback();
     }
-
 
     System.out.println("프로젝트를 저장했습니다!");
   }

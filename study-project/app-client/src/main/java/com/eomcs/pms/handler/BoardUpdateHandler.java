@@ -41,6 +41,7 @@ public class BoardUpdateHandler implements Command {
       return;
     }
 
+
     board.setTitle(title);
     board.setContent(content);
 

@@ -46,8 +46,6 @@ public class BoardDetailHandler implements Command {
       return;
     }
 
-
-
     request.setAttribute("no", no);
 
     while (true) {

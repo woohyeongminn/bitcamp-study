@@ -14,8 +14,7 @@ public class ProjectUpdateHandler implements Command {
   MemberPrompt memberPrompt;
   SqlSession sqlSession;
 
-  public ProjectUpdateHandler(
-      ProjectDao projectDao, MemberPrompt memberPrompt, SqlSession sqlSession) {
+  public ProjectUpdateHandler(ProjectDao projectDao, MemberPrompt memberPrompt, SqlSession sqlSession) {
     this.projectDao = projectDao;
     this.memberPrompt = memberPrompt;
     this.sqlSession = sqlSession;
@@ -59,7 +58,7 @@ public class ProjectUpdateHandler implements Command {
 
     try {
       projectDao.update(project);
-      projectDao.deleteMebmer(project.getNo());
+      projectDao.deleteMember(project.getNo());
       for (Member m : project.getMembers()) {
         projectDao.insertMember(project.getNo(), m.getNo());
       }
