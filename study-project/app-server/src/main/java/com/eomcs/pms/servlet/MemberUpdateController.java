@@ -32,12 +32,9 @@ public class MemberUpdateController extends HttpServlet {
 
     try {
       int no = Integer.parseInt(request.getParameter("no"));
-
       Member member = memberDao.findByNo(no);
-
       if (member == null) {
         throw new Exception("해당 번호의 회원이 없습니다.");
-
       } 
 
       member.setName(request.getParameter("name"));
