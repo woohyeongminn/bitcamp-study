@@ -2,11 +2,11 @@
 package com.eomcs.web.ex01;
 
 import java.io.IOException;
-import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 // @WebServlet 애노테이션
 // => web.xml 에 서블릿 정보를 설정하는 대신에 
@@ -21,14 +21,14 @@ import javax.servlet.annotation.WebServlet;
 //@WebServlet(urlPatterns="/ex01/s04")
 //@WebServlet(urlPatterns={"/ex01/s04"})
 @WebServlet(urlPatterns={"/ex01/s04","/ex01/hoho","/hoho2"})
-public class Servlet04 extends GenericServlet {
+public class Servlet04 extends HttpServlet {
 
   private static final long serialVersionUID = 1L;
 
   @Override
-  public void service(ServletRequest req, ServletResponse res)
+  protected void doGet(HttpServletRequest req, HttpServletResponse res)
       throws ServletException, IOException {
-    System.out.println("Servlet04.service(ServletRequest,ServletResponse)");
+    System.out.println("Servlet04.doGet(ServletRequest,ServletResponse)");
   }
 }
 

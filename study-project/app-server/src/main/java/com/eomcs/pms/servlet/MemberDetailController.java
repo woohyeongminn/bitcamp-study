@@ -27,26 +27,24 @@ public class MemberDetailController extends GenericServlet {
   public void service(ServletRequest request, ServletResponse response)
       throws ServletException, IOException {
 
-
-
     try {
       int no = Integer.parseInt(request.getParameter("no"));
       Member member = memberDao.findByNo(no);
 
       if (member == null) {
         throw new Exception("해당 번호의 회원이 없습니다.");
-      } 
+      }
 
       request.setAttribute("member", member);
-      request.getRequestDispatcher("/member/MemberDetail.jsp").forward(request, response);
+
+      request.setAttribute("pageTitle", "회원정보");
+      request.setAttribute("contentUrl", "/member/MemberDetail.jsp");
+      request.getRequestDispatcher("/template1.jsp").forward(request, response);
 
     } catch (Exception e) {
-      // 오츄를 출력할 때 사용할 수 있도록 예외 객체를 저장소에 보관한다.
       request.setAttribute("error", e);
-      // 오류가 발생하면, 오류 내용을 출력할 뷰를 호출한다.
       request.getRequestDispatcher("/Error.jsp").forward(request, response);
     }
-
   }
 }
 
