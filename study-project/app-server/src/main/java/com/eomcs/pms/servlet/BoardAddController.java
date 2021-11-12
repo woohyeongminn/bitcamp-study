@@ -3,7 +3,6 @@ package com.eomcs.pms.servlet;
 import java.io.IOException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,6 @@ import com.eomcs.pms.dao.BoardDao;
 import com.eomcs.pms.domain.Board;
 import com.eomcs.pms.domain.Member;
 
-@MultipartConfig(maxFileSize = 1024 * 1024 * 10)
 @WebServlet("/board/add")
 public class BoardAddController extends HttpServlet {
   private static final long serialVersionUID = 1L;
@@ -32,21 +30,18 @@ public class BoardAddController extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     try {
-
-      Board board= new Board();
+      Board board = new Board();
 
       board.setTitle(request.getParameter("title"));
       board.setContent(request.getParameter("content"));
-
       board.setWriter((Member) request.getSession().getAttribute("loginUser"));
 
       boardDao.insert(board);
       sqlSession.commit();
 
-      response.sendRedirect("list"); 
+      response.sendRedirect("list");
 
     } catch (Exception e) {
-      e.printStackTrace();
       request.setAttribute("error", e);
       request.getRequestDispatcher("/Error.jsp").forward(request, response);
     }

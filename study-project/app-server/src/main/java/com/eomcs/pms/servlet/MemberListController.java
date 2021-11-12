@@ -20,7 +20,7 @@ public class MemberListController extends GenericServlet {
   MemberDao memberDao;
 
   @Override
-  public void init()  {
+  public void init() {
     ServletContext 웹애플리케이션공용저장소 = getServletContext();
     memberDao = (MemberDao) 웹애플리케이션공용저장소.getAttribute("memberDao");
   }

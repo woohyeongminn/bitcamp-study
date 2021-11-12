@@ -30,13 +30,13 @@ tr:hover {
 <tbody>
 
 <c:forEach items="${boardList}" var="board">
-	<tr data-no="${board.no}">
-	    <td>${board.no}</td>
-	    <td><a href='detail?no=${board.no}'>${board.title}</a></td> 
-	    <td>${board.writer.name}</td> 
-	    <td>${board.registeredDate}</td>
-	    <td>${board.viewCount}</td>
-	</tr>
+<tr data-no="${board.no}">
+    <td>${board.no}</td>
+    <td><a href='detail?no=${board.no}'>${board.title}</a></td> 
+    <td>${board.writer.name}</td> 
+    <td>${board.registeredDate}</td> 
+    <td>${board.viewCount}</td>
+</tr>
 </c:forEach>
 
 </tbody>
