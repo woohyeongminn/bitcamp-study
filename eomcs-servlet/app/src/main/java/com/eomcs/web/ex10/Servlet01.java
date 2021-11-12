@@ -61,10 +61,10 @@ public class Servlet01 extends HttpServlet {
     // 프로토콜 예 => Set-Cookie: working=true
 
     // => 또한 값은 반드시 ISO-8859-1 이어야 한다.
-    // 만약 UTF-8을 보내고 싶다면 URL 인코딩 같은 기법을 사용하여
-    // ASCII 코드화시켜 보내야 한다.
+    //    만약 UTF-8을 보내고 싶다면 URL 인코딩 같은 기법을 사용하여
+    //    ASCII 코드화시켜 보내야 한다.
     Cookie c4 = new Cookie("name2", "홍길동");
-    // 프로토콜 예 => Set-Cookie: name2=홍길동
+    //    프로토콜 예 => Set-Cookie: name2=홍길동
 
     Cookie c5 = new Cookie("name3", URLEncoder.encode("홍길동", "UTF-8"));
     // 프로토콜 예 => Set-Cookie: name3=%ED%99%8D%EA%B8%B8%EB%8F%99
