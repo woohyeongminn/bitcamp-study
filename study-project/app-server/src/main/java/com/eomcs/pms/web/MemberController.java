@@ -3,8 +3,6 @@ package com.eomcs.pms.web;
 import java.util.Collection;
 import java.util.UUID;
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +25,7 @@ public class MemberController {
   @Autowired ServletContext sc;
 
   @GetMapping("/member/form")
-  public ModelAndView form(HttpServletRequest request, HttpServletResponse response) {
+  public ModelAndView form() {
     ModelAndView mv = new ModelAndView();
     mv.addObject("pageTitle", "새회원");
     mv.addObject("contentUrl", "member/MemberForm.jsp");
@@ -37,7 +35,6 @@ public class MemberController {
 
   @PostMapping("/member/add")
   public ModelAndView add(Member member, Part photoFile) throws Exception {
-
     if (photoFile.getSize() > 0) {
       String filename = UUID.randomUUID().toString();
       photoFile.write(sc.getRealPath("/upload/member") + "/" + filename);
@@ -102,6 +99,70 @@ public class MemberController {
     mv.addObject("pageTitle", "회원정보");
     mv.addObject("contentUrl", "member/MemberDetail.jsp");
     mv.setViewName("template1");
+    return mv;
+  }
+
+  @PostMapping("/member/update")
+  public ModelAndView update(Member member, Part photoFile) throws Exception {
+
+    Member oldMember = memberDao.findByNo(member.getNo());
+    if (oldMember == null) {
+      throw new Exception("해당 번호의 회원이 없습니다.");
+    } 
+
+    member.setPhoto(oldMember.getPhoto());
+    member.setRegisteredDate(oldMember.getRegisteredDate());
+
+    if (photoFile.getSize() > 0) {
+      String filename = UUID.randomUUID().toString();
+      photoFile.write(sc.getRealPath("/upload/member") + "/" + filename);
+      member.setPhoto(filename);
+
+      Thumbnails.of(sc.getRealPath("/upload/member") + "/" + filename)
+      .size(20, 20)
+      .outputFormat("jpg")
+      .crop(Positions.CENTER)
+      .toFiles(new Rename() {
+        @Override
+        public String apply(String name, ThumbnailParameter param) {
+          return name + "_20x20";
+        }
+      });
+
+      Thumbnails.of(sc.getRealPath("/upload/member") + "/" + filename)
+      .size(100, 100)
+      .outputFormat("jpg")
+      .crop(Positions.CENTER)
+      .toFiles(new Rename() {
+        @Override
+        public String apply(String name, ThumbnailParameter param) {
+          return name + "_100x100";
+        }
+      });
+
+      member.setPhoto(filename);
+    }
+
+    memberDao.update(member);
+    sqlSessionFactory.openSession().commit();
+
+    ModelAndView mv = new ModelAndView();
+    mv.setViewName("redirect:list");
+    return mv;
+  }
+
+  @GetMapping("/member/delete")
+  public ModelAndView delete(int no) throws Exception {
+    Member member = memberDao.findByNo(no);
+    if (member == null) {
+      throw new Exception("해당 번호의 회원이 없습니다.");
+    }
+
+    memberDao.delete(no);
+    sqlSessionFactory.openSession().commit();
+
+    ModelAndView mv = new ModelAndView();
+    mv.setViewName("redirect:list");
     return mv;
   }
 }

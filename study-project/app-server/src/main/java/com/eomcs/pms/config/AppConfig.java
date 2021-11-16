@@ -21,13 +21,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-//프론트 컨트롤러는 객체를 보관할 수 있는 bean container를 갖고 있다.
-//빈 컨테이너에는 페이지 컨트롤러 객체를 보관한다.
-//또한 페이지 컨트롤러가 의존하는 객체도 보관한다.
-//빈(Bean) 컨테이너를 사용한다.
-//빈 컨테이너는 개발자가 지정한 설정에 맞춰 객체를 생성한다.
-//
-//다음 이런 빈 컨테이너의 행동을 설정 하는 클래스이다.
+// 프론트 컨트롤러는 객체를 보관할 수 있는 bean container를 갖고 있다.  
+// 빈컨테이너에는 페이지 컨트롤러 객체를 보관한다.
+// 또한 페이지 컨트롤러가 의존하는 객체도 보관한다.
+// 
+// 다음은 이런 빈컨테이너의 행동을 설정하는 클래스이다.
 //
 
 //1) 빈 컨테이너가 자동으로 객체를 생성해야 하는 패키지를 등록한다.
@@ -123,4 +121,5 @@ public class AppConfig {
     vr.setSuffix(".jsp");
     return vr;
   }
+
 }

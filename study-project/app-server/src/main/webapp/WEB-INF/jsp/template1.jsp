@@ -5,9 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <c:if test="${not empty refresh}">
-    <meta http-equiv="Refresh" content="${refresh}">
-  </c:if>
+<c:if test="${not empty refresh}">
+  <meta http-equiv="Refresh" content="${refresh}">   
+</c:if>
   <title>${pageTitle}</title>
   <link rel="stylesheet" href="${contextPath}/node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="${contextPath}/node_modules/sweetalert2/dist/sweetalert2.css">
